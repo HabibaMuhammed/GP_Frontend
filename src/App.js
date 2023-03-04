@@ -1,21 +1,18 @@
 import React from "react";
 
 import Landing from "./pages/Landing";
-import { Header } from "./containers";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CTA, Brand, Navbar } from "./components";
-
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import "./App.css";
 
 const App = () => (
   <div className="App">
     <BrowserRouter>
-      <div className="gradient__bg">
-        <Navbar />
-        <Header />
-      </div>
       <Routes>
         <Route path="/" element={<Landing />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
       </Routes>
     </BrowserRouter>
   </div>

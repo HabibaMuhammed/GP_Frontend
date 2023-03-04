@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 import "./navbar.css";
 
 const Navbar = () => {
@@ -9,11 +10,13 @@ const Navbar = () => {
     <div className="gp__navbar">
       <div className="gp__navbar-links">
         <div className="gp__navbar-links_logo">
-          <h1>X-Defense</h1>
+          <Link to="/">
+            <h1>X-Defense</h1>
+          </Link>
         </div>
         <div className="gp__navbar-links_container">
           <p>
-            <a href="#home">Home</a>
+            <Link to="/">Home</Link>
           </p>
           <p>
             <a href="#what">What is X-defense?</a>
@@ -24,8 +27,12 @@ const Navbar = () => {
         </div>
       </div>
       <div className="gp__navbar-sign">
-        <p>Sign in</p>
-        <button type="button">Sign up</button>
+        <Link to="/login">
+          <p>Sign in</p>
+        </Link>
+        <Link to="/signup">
+          <button type="button">Sign up</button>
+        </Link>
       </div>
       <div className="gp__navbar-menu">
         {toggleMenu ? (
@@ -55,8 +62,12 @@ const Navbar = () => {
               </p>
             </div>
             <div className="gp__navbar-menu_container-links-sign">
-              <p>Sign in</p>
-              <button type="button">Sign up</button>
+              <Link to="\login">
+                <p>Sign in</p>
+              </Link>
+              <Link to="\signup">
+                <button type="button">Sign up</button>
+              </Link>
             </div>
           </div>
         )}
