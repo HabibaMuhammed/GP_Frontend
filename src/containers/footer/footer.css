@@ -1,0 +1,149 @@
+.gp__footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--color-footer);
+}
+
+.gp__footer-heading {
+  width: 100%;
+  text-align: center;
+
+  margin-bottom: 4rem;
+}
+
+.gp__footer-heading h1 {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 62px;
+  line-height: 75px;
+}
+
+.gp__footer-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+  border: 1px solid #b7b4b4;
+  text-align: center;
+
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.gp__footer-btn p {
+  font-size: 18px;
+  font-family: var(--font-family);
+  line-height: 21px;
+  color: #ffffff;
+  word-spacing: 2px;
+}
+
+.gp__footer-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  width: 100%;
+  text-align: left;
+}
+
+.gp__footer-links div {
+  width: 250px;
+  margin: 1rem;
+}
+
+.gp__footer-links_logo {
+  display: flex;
+  width: 118px;
+  height: 30px;
+  margin-bottom: 1rem;
+  flex-direction: column;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+.gp__footer-links_logo p {
+  font-family: var(--font-family);
+  font-size: 12px;
+  line-height: 15px;
+  color: #fff;
+}
+
+.gp__footer-links_div {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.gp__footer-links_div h4 {
+  font-size: 14px;
+  line-height: 17px;
+  font-family: var(--font-family);
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 0.9rem;
+}
+
+.gp__footer-links_div p {
+  font-size: 12px;
+  line-height: 15px;
+  font-family: var(--font-family);
+  color: #fff;
+  font-weight: 200;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.gp__footer-copyright {
+  margin-top: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.gp__footer-copyright p {
+  font-size: 10px;
+  font-family: var(--font-family);
+  line-height: 12px;
+  font-weight: 200;
+  color: #fff;
+}
+
+@media screen and (max-width: 850px) {
+  .gp__footer-heading h1 {
+    font-size: 44px;
+    line-height: 50px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .gp__footer-heading h1 {
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  .gp__footer-links div {
+    margin: 1rem 0;
+  }
+
+  .gp__footer-btn p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .gp__footer-heading h1 {
+    font-size: 27px;
+    line-height: 38px;
+  }
+}

@@ -1,23 +1,24 @@
-import logo from "./logo.svg";
+import React from "react";
+
+import Landing from "./pages/Landing";
+import { Header } from "./containers";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CTA, Brand, Navbar } from "./components";
+
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        ></a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <BrowserRouter>
+      <div className="gradient__bg">
+        <Navbar />
+        <Header />
+      </div>
+      <Routes>
+        <Route path="/" element={<Landing />}></Route>
+      </Routes>
+    </BrowserRouter>
+  </div>
+);
 
 export default App;
