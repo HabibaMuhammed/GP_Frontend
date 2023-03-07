@@ -22,7 +22,7 @@ const Navbar = () => {
             <a href="#what">What is X-defense?</a>
           </p>
           <p>
-            <a href="#labs">Labs</a>
+          <Link to="/labs">Labs</Link>
           </p>
         </div>
       </div>
