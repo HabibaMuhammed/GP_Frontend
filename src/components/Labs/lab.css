@@ -1,0 +1,58 @@
+.labCard {
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0.2rem;
+
+  padding: 2rem;
+  background-color: #082f58;
+  box-sizing: border-box;
+  margin-left: 2rem;
+
+  border-radius: 25px;
+  padding: 20px;
+  width: 220px;
+  height: 250px;
+}
+.labCard__img {
+  width: 6rem;
+  align-self: center;
+}
+
+.labCard__body {
+  margin: 1rem;
+}
+.labCard__title {
+  color: #fff;
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  text-transform: capitalize;
+  line-height: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.labCard__btn {
+  padding: 0.5rem 1rem;
+  width: 8rem;
+  color: #fff;
+  background: #ff4820;
+  font-family: var(--font-family);
+  font-weight: 500;
+  align-self: center;
+  font-size: 16px;
+  line-height: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 600px) {
+  .labCard {
+    flex-direction: column;
+    text-align: center;
+    min-width: 14rem;
+  }
+}
