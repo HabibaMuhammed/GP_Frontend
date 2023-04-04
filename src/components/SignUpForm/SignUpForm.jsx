@@ -1,34 +1,39 @@
 import React, { useState } from "react";
 import "./SignUpForm.css";
+import { Slide, ToastContainer,toast } from "react-toastify";
 import Card from "../Card/Card";
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
+import { clear } from "@testing-library/user-event/dist/clear";
 
 const SignUpForm = () => {
-  const [fname, setfname] = useState("");
-  const [lname, setlname] = useState("");
+  const [firstName, setfirstName] = useState("");
+  const [lastName, setlastName] = useState("");
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const [errorMessages, setErrorMessages] = useState({});
+  const navigate = useNavigate();
 
   const errors = {
-    nofname: "Please enter your first name",
-    nolname: "Please enter your last name",
+    nofirstName: "Please enter your first name",
+    nolastName: "Please enter your last name",
     noEmail: "Please enter your email",
     noPassword: "Please enter your password",
     noConfirmedPassword: "Please confirm your password",
   };
-
+  //console.log(firstName, lastName, email, password);
   const handleSubmit = (e) => {
-    // Prevent page from reloading
     e.preventDefault();
+    //console.log(firstName, lastName, email, password);
 
-    if (!fname) {
+    if (!firstName) {
       // Username input is empty
-      setErrorMessages({ name: "nofname", message: errors.nofname });
+      setErrorMessages({ name: "nofirstName", message: errors.nofirstName });
       return;
     }
-    if (!lname) {
-      setErrorMessages({ name: "nolname", message: errors.nolname });
+    if (!lastName) {
+      setErrorMessages({ name: "nolastName", message: errors.nolastName });
       return;
     }
     if (!email) {
@@ -48,6 +53,31 @@ const SignUpForm = () => {
       });
       return;
     }
+    fetch("http://localhost:5001/api/user/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        password,
+      }),
+    })
+      .then((res) => res)
+      .then((data) => {
+        if (data.status === 200) {
+          toast.success("Registered Successfully !",{transition:Slide})
+          setTimeout(() => {
+            navigate('/login',{state:{email:data.email}});
+          }, 3000);
+        } else {
+         toast.info("You are already Registered !",{transition:Slide})
+          clear();
+        }
+      });
+
   };
 
   // Render error messages
@@ -65,19 +95,19 @@ const SignUpForm = () => {
           <input
             type="text"
             placeholder="First Name"
-            value={fname}
-            onChange={(e) => setfname(e.target.value)}
+            value={firstName}
+            onChange={(e) => setfirstName(e.target.value)}
           />
-          {renderErrorMsg("fname")}
-          {renderErrorMsg("nofname")}
+          {renderErrorMsg("firstName")}
+          {renderErrorMsg("nofirstName")}
           <input
             type="text"
             placeholder="Last Name"
-            value={lname}
-            onChange={(e) => setlname(e.target.value)}
+            value={lastName}
+            onChange={(e) => setlastName(e.target.value)}
           />
-          {renderErrorMsg("lname")}
-          {renderErrorMsg("nolname")}
+          {renderErrorMsg("lastName")}
+          {renderErrorMsg("nolastName")}
           <input
             type="email"
             placeholder="E-mail"
@@ -104,6 +134,7 @@ const SignUpForm = () => {
           {renderErrorMsg("noConfirmedPassword")}
         </div>
         <input type="submit" value="Register" className="SignUp_button" />
+        <ToastContainer/>
       </form>
     </Card>
   );
