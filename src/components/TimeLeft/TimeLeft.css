@@ -1,0 +1,54 @@
+.timeContainer {
+  background-color: #12122d;
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  color: #dba9df;
+  padding: 15px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+}
+
+.timeInfo{
+    margin: 10px;
+}
+
+.timeImage {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.timeTitle {
+  /* Body Text/ Small/ Medium */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: #a3aed0;
+}
+
+.time {
+    color: #dba9df;
+}
+
+@media only screen and (max-width: 1200px) {
+  .timeContainer {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .timeInfo {
+    margin: 10px 0;
+  }
+
+ .timeImage {
+    max-height: 60px; /* adjust the value as needed */
+  }
+  .timeTitle {
+    font-size: 16px;
+  }
+}

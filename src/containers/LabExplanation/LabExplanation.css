@@ -1,0 +1,27 @@
+.explanationContainer {
+  display: flex;
+  justify-content: flex-start;
+  width: 95%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.accord {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+.rest {
+  width: 20%;
+}
+
+@media screen and (max-width: 1200px) {
+  .explanationContainer {
+    flex-direction: column;
+  }
+
+  .accord,.rest {
+    width: 100%;
+  }
+}
