@@ -1,0 +1,48 @@
+.downloadContainer {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 1px;
+  padding: 10px;
+  margin: 20px auto;
+  border-style: dashed;
+}
+.middle {
+  padding: 20px;
+}
+.downloadTitle {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+
+  color: #fdf8f8;
+}
+.downloadImg {
+  margin-left: 20px;
+}
+.downloadSub {
+  font-family: "Montaga";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+
+  color: #93959b;
+}
+.downloadBtn {
+  color: #fff;
+  font-family: "Inter";
+  font-size: 10px;
+  background: linear-gradient(90deg, #ff4820 0%, #ae67fa 100%);
+  border-radius: 4px;
+  border-width: 0;
+  border-color: none;
+  margin: 20px;
+  padding: 10px;
+}

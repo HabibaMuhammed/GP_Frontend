@@ -4,3 +4,5 @@ export { default as Blog } from "./blog/Blog";
 export { default as Damage } from "./damage/Damage";
 export { default as Whatis } from "./whatis/Whatis";
 export { default as Labcard } from "./Lab_card/Labcard";
+export { default as LabStats } from "./LabStats/LabStats";
+export { default as LabExplanation } from "./LabExplanation/LabExplanation";

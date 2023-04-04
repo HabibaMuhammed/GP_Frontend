@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import "./App.css";
 import Labs from "./pages/Labs";
+import LabContent from "./pages/LabContent";
 
 const App = () => (
   <div className="App">
@@ -15,6 +16,7 @@ const App = () => (
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/labs" element={<Labs />}></Route>
+        <Route path="/content" element={<LabContent />}></Route>
       </Routes>
     </BrowserRouter>
   </div>
