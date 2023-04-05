@@ -9,7 +9,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
-const LoginForm = () => {
+const LoginForm = ({onLogin}) => {
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
   const [authenticated, setauthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
@@ -43,9 +43,9 @@ const LoginForm = () => {
       if (data && data.password === password) { 
         setauthenticated(true)
         localStorage.setItem("authenticated", true);}
-      console.log(data);
       localStorage.clear();
-      
+      onLogin(data.name); // call the callback function with the user data
+
       localStorage.setItem("token", JSON.stringify(data.token));
       toast.success("Logged in Successfully !",{transition:Slide})
       setTimeout(() => {

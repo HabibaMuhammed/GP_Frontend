@@ -15,17 +15,14 @@ export default function FlagInput() {
   };
 
   const handleSubmit = (e) => {
-    localStorage.setItem(
-      "token",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmI1YTM1YTc0NzcyYzI4OTlkMjMzNSIsImlhdCI6MTY4MDU3MTI1MH0.Zv7jaEbWi231Y7Xk4rkUXpILqUAArzUypPwFRyZxIB4"
-    );
-    const token = localStorage.getItem("token");
+    const token = JSON.parse(localStorage.getItem("token"));
     e.preventDefault();
+    console.log(token);
     const reqURL = "http://localhost:5001/api/labs/evaluate";
 
-    const data = {
+    const data = { 
       flag: text,
-      labid: "642b333a016cc88c1f396f51",
+      labid: "642c9c9943d32fd779de6e6e",
     };
     setShowToast(true);
     axios

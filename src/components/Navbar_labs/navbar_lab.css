@@ -5,7 +5,19 @@
 
   padding: 2rem 6rem;
 }
-
+.logoutBtn {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: #ff4820;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
 .gp__navbar-links {
   flex: 1;
   display: flex;
