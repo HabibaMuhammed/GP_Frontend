@@ -1,12 +1,17 @@
-import React from "react";
-import { Navbar } from "../components";
+import { useContext } from "react";
+import { UserContext } from "../App";
+import { Navbar, NavbarLab } from "../components";
 import SignUpForm from "../components/SignUpForm/SignUpForm";
 
 export default function Signup() {
+  
+  const user = useContext(UserContext);
+
   return (
     <>
-      <Navbar />
-      <SignUpForm />;
+      {!user && <Navbar />}
+      {user && <NavbarLab user={user} />}
+      <SignUpForm />
     </>
   );
 }

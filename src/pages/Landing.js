@@ -1,12 +1,16 @@
-import React from "react";
+import { useContext } from "react";
 import { Footer, Blog, Damage, Whatis, Header } from "../containers";
-import { CTA, Navbar } from "../components";
+import { CTA, Navbar, NavbarLab } from "../components";
+import { UserContext } from "../App";
+function Landing() {
+  const user = useContext(UserContext);
 
-export default function landing() {
+
   return (
     <>
       <div className="gradient__bg">
-        <Navbar />
+        {!user && <Navbar />}
+        {user && <NavbarLab user={user} />}
         <Header />
       </div>
       <Whatis />
@@ -17,3 +21,5 @@ export default function landing() {
     </>
   );
 }
+
+export default Landing;

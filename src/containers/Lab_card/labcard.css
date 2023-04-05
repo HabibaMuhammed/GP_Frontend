@@ -8,6 +8,15 @@
   align-items: center;
 }
 
+.learning {
+  margin-top: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 @media screen and (min-width: 600px) {
   .wrapper {
     grid-template-columns: repeat(auto-fit, minmax(14rem, 16rem));

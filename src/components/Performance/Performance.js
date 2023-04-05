@@ -7,11 +7,7 @@ export default function Performance() {
   const totalNumberOfLabs = 12;
   const [count, setCount] = useState(0);
   // remove this after merging
-  localStorage.setItem(
-    "token",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmI4OWU1NzVhODFjOTAwNWQ5NWJiMiIsImlhdCI6MTY4MDU3NzEwMn0.zAG78rvGx3boq-wTEXB0RCaWIGdUg6CwpM7bsCA2zvM"
-  );
-  const token = localStorage.getItem("token");
+  const token = JSON.parse(localStorage.getItem("token"));
   axios
     .get("http://localhost:5001/api/labs/number", {
       headers: {

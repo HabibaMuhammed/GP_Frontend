@@ -6,9 +6,14 @@ import xss from "../../assets/xss.png";
 import csrf from "../../assets/csrf.png";
 import sql from "../../assets/sqlinjection.png";
 import weakid from "../../assets/id.png";
+
+import learn from "../../assets/learn.png";
 import file from "../../assets/fileupload.png";
 const Labcard = () => (
   <div className="bigbox">
+    <div className="learning">
+      <Labs img={learn} title="Learn  Environment" />
+    </div>
     <div className="wrapper">
       <Labs img={sql} title="Sql Injection" />
       <Labs img={xss} title="XSS" />
