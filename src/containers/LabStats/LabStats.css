@@ -1,0 +1,13 @@
+.labStatsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .labStatsContainer {
+    width: 100%;
+ 
+  }
+}

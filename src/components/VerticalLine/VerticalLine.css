@@ -1,0 +1,11 @@
+.vertical-line {
+  border: 1px solid #2c2d33;
+  height: auto; /* Adjust height as desired */
+  margin: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .vertical-line {
+    display: none !important;
+  }
+}

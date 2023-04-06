@@ -1,0 +1,92 @@
+.toastContainer {
+  /* display: none; */
+  position: fixed;
+  bottom: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  width: 400px;
+  right: 20px;
+  padding: 20px;
+  height: 100px;
+  background-color: #03a65a;
+  color: white;
+  border-radius: 32px;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation-duration: 2s; /* Add this */
+}
+
+
+.toastContainerWrong {
+  /* display: none; */
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  z-index: 50;
+
+  width: 400px;
+  right: 20px;
+  padding: 20px;
+  height: 100px;
+  background-color: #F22237;
+  color: white;
+  border-radius: 32px;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation-duration: 2s; /* Add this */
+}
+.toastBody {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin-left: 90px;
+}
+.toastTitle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+
+  color: #ffffff;
+}
+.toastText {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  width: 100%;
+  color: #ffffff;
+}
+.toastImg {
+  position: absolute;
+  overflow: hidden;
+  left: -4%;
+  border-radius: 0 0 0 32px;
+
+  bottom: 0;
+}
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 20px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}

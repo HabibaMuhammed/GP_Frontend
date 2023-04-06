@@ -1,0 +1,89 @@
+.gp__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2rem 6rem;
+}
+
+.gp__navbar-links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.gp__navbar-links_logo {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+.gp__navbar-links_container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 4rem;
+}
+
+.gp__navbar-sign {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+.gp__navbar-user {
+  display: flex;
+  flex-direction: row;
+  margin: 0 2rem;
+}
+.gp__navbar-user img {
+  width: 3rem;
+}
+.gp__navbar-user p {
+  color: #fff;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  text-transform: capitalize;
+
+  margin: 0 1rem;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.icons {
+  margin-left: 10px;
+}
+
+.icons img {
+  width: 70%;
+}
+.logoutBtn {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: #ff4820;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 700px) {
+  .gp__navbar {
+    padding: 2rem 4rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .gp__navbar {
+    padding: 2rem;
+  }
+}

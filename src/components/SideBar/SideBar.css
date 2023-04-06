@@ -1,0 +1,10 @@
+.sideBar{
+    position: absolute;
+    width: 100px;
+    height: 1710px;
+    left: 0px;
+    top: 5px;
+    display: 2;
+    background-color: linear-gradient(359.7deg, rgba(7, 45, 86, 0.8) 20%, rgba(23, 127, 239, 0) 80%);
+    border-radius: 36px 0px 0px 36px;
+    }
