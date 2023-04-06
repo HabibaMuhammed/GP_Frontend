@@ -5,14 +5,17 @@ import download from "../../assets/Download.png";
 
 export default function DownloadLab() {
   const downloadFile = () => {
-    const link = document.createElement('a');
-    link.href = "http://localhost:5001/Container/djan.zip";
+    const link = document.createElement("a");
+    link.href = "http://localhost:5001/Container/sqlinjection_lab.rar";
     link.download = "Lab";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    var today = new Date();
+    var downloadtime =
+      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    localStorage.setItem("downloadTime", downloadtime);
   };
-
   return (
     <div className="downloadContainer">
       <img src={download} alt="download" className="downloadImg" />
