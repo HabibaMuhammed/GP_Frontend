@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
-
 import "./FlagInput.css";
 import Toast from "../Toast/Toast";
 export default function FlagInput() {
   const [text, setText] = useState("");
   const [solved, setSolved] = useState(false);
   const [showToast, setShowToast] = useState(false);
-
+  const [errorMessages, setErrorMessages] = useState({});
   const [buttonText, setButtonText] = useState("Submit");
 
+  const errors={
+    noFlagInput: "Please enter a flag"
+  };
   const handleChange = (e) => {
     setText(e.target.value);
   };
@@ -24,6 +26,12 @@ export default function FlagInput() {
       flag: text,
       labid: "642c9c9943d32fd779de6e6e",
     };
+
+    if (!text){
+      setErrorMessages({ name: "noFlagInput", message: errors.noFlagInput });
+      return;
+    } 
+
     setShowToast(true);
     axios
       .post(reqURL, data, {
@@ -47,6 +55,10 @@ export default function FlagInput() {
     }, 3000);
   };
 
+  const renderErrorMsg = (name) =>
+  name === errorMessages.name && (
+    <p className="error_msg">{errorMessages.message}</p>
+  );
   return (
     <div className="inputContainer">
       <input
@@ -61,6 +73,8 @@ export default function FlagInput() {
       </button>
       {solved && showToast && <Toast success={solved} />}
       {!solved && showToast && <Toast success={solved} />}
+      {renderErrorMsg("text")}
+     {renderErrorMsg("noFlagInput")}
     </div>
   );
 }

@@ -1,3 +1,27 @@
+.img2{
+  width: 550px;
+  height: 100%;
+  margin-top: -4rem ;
+  margin-left: 55rem;
+}
+.quote{
+  width: 550px;
+  height: 100%;
+  color: azure;
+  font-family: "Inter";
+  font-style: "Regular";
+  font-size: 35px;
+  justify-content: "center";
+  display: flex;
+  margin-bottom: 5rem;
+  text-align: "center";
+  margin-top: -45rem ;
+  margin-left: 50rem;
+  align-items: "Center";
+  border: none;
+
+}
+
 .title {
   color: white;
   text-align: center;
@@ -28,7 +52,7 @@
 
 .SignUp_button {
   display: block;
-  margin: 3rem auto 1rem auto;
+  margin: 1rem auto 1rem auto;
   width: 55%;
   padding: 0.75rem 1rem;
   border-radius: 25px;
@@ -36,14 +60,14 @@
   font-size: 1rem;
   font-family: inherit;
   cursor: pointer;
-  background-color: #ff4820;
+  background-color:#040C18;
   color: white;
   border: 2px solid transparent;
 }
 
 .SignUp_button:hover {
-  border: 2px solid #ff4820;
-  background-color: #000;
+  border: 2px solid #ffffff;
+  background-color: rgb(94, 164, 210);
 }
 
 .link_container {
@@ -68,7 +92,7 @@
   margin: 0;
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 720px) {
   .inputs_container input {
     width: 100%;
   }

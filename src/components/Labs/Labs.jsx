@@ -1,13 +1,6 @@
 import React from "react";
 import "./lab.css";
 import { useNavigate } from "react-router-dom";
-
-import bruteforce from "../../assets/bruteforce.png";
-import xss from "../../assets/xss.png";
-import csrf from "../../assets/csrf.png";
-import sql from "../../assets/sqlinjection.png";
-import weakid from "../../assets/id.png";
-import file from "../../assets/fileupload.png";
 const Labs = ({ img, title }) => {
   const navigate = useNavigate();
   const navigateToContent = () => {

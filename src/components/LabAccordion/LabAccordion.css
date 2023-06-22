@@ -7,15 +7,16 @@
   flex-direction: column;
   align-items: center;
   text-align: left;
-
   width: 100%;
   height: auto;
   background: linear-gradient(144.39deg, #02121b -78.42%, #124c89 91.61%);
   margin-bottom: 20px;
   padding: 30px;
   border-radius: 100px;
-  color: #81afdd;
+  color: #c4d3e1;
+  
 }
+
 .practice {
   width: 100%;
   height: 300px;
@@ -38,6 +39,7 @@
 .bodyText {
   padding: 10px;
 }
+
 
 /* Button Text */
 .ButtonTxt {

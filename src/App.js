@@ -1,6 +1,5 @@
 import React, { useState, useEffect, createContext } from "react";
 import axios from "axios";
-
 import Landing from "./pages/Landing";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
@@ -8,7 +7,7 @@ import Signup from "./pages/Signup";
 import "./App.css";
 import Labs from "./pages/Labs";
 import LabContent from "./pages/LabContent";
-
+import PageNotFound from "./components/error/Error";
 export const UserContext = createContext(null);
 export const LogoutContext = createContext(() => {});
 
@@ -42,7 +41,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <UserContext.Provider value={ user}>
+      <UserContext.Provider value={user}>
         <LogoutContext.Provider value={handleLogout}>
           <BrowserRouter>
             <Routes>
@@ -51,6 +50,8 @@ const App = () => {
               <Route path="/signup" element={<Signup />} />
               <Route path="/labs" element={<Labs />} />
               <Route path="/content" element={<LabContent />} />
+             <Route path="*" Component={PageNotFound} />
+         
             </Routes>
           </BrowserRouter>
         </LogoutContext.Provider>

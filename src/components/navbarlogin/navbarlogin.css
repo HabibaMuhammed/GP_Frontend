@@ -34,7 +34,6 @@
   align-items: center;
 }
 
-
 .gp__navbar-user {
   display: flex;
   flex-direction: row;
@@ -48,11 +47,11 @@
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
-  line-height: 30px;
+  line-height: 50px;
   text-transform: capitalize;
 
-  margin: 0 1rem;
-  margin-top: 10px;
+  margin: 0 5rem 4rem;
+  margin-top: 30px;
   cursor: pointer;
 }
 .icons {
