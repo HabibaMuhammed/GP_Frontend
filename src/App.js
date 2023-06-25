@@ -8,10 +8,13 @@ import "./App.css";
 import Labs from "./pages/Labs";
 import LabContent from "./pages/LabContent";
 import PageNotFound from "./components/error/Error";
-import LearningEnv from "./pages/LearningEnv";
+import LearningEnv from "./pages/LearningEnv";import UserProfile from "./pages/UserProfile";
+import Settings from "./pages/Settings";
+import Forget from "./pages/Forget";
+import ResetPassword from "./pages/ResetPassword";
+
 export const UserContext = createContext(null);
 export const LogoutContext = createContext(() => {});
-
 
              
 const App = () => {
@@ -52,10 +55,15 @@ const App = () => {
               <Route path="/login" element={<Login onLogin={setUser} />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/labs" element={<Labs />} />
-              <Route path="/content" element={<LabContent />} />
+              <Route path="/profile" element={<UserProfile />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/forget" element={<Forget />} />
+              <Route path="/reset" element={<ResetPassword />} />
+
               <Route path="/learningcontent" element={<LearningEnv />}/>
              <Route path="*" Component={PageNotFound} />
              
+              <Route path="/content" element={<LabContent />} />
             </Routes>
           </BrowserRouter>
         </LogoutContext.Provider>

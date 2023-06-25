@@ -1,0 +1,52 @@
+.userBarContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    144.39deg,
+    #3c5b98 -278.56%,
+    #6d6d6d -78.47%,
+    #02121b -78.42%,
+    #072d56 91.61%
+  );
+  width: 300px;
+  border-radius: 36px;
+  padding: 15px;
+  color: #ffffff;
+}
+.userInfo{
+  font-family: 'Inter';
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.userImg{
+  width: 5rem;
+}
+.learningPoints {
+  background: #282836;
+  border-radius: 8px;
+  font-family: "Inter";
+  font-style: normal;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+}
+.points{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.courseResult{
+  background-color: #39394B;
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
