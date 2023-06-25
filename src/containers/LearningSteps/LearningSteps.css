@@ -1,0 +1,48 @@
+.explanationContainer {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    text-align: left;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  
+  .accord {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .explanationContainer {
+      flex-direction: column;
+    }
+  
+    .accord {
+      width: 100%;
+    }
+  }
+  .explanationContainer {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .accord {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .explanationContainer {
+      flex-direction: column;
+    }
+  
+    .accord {
+      width: 100%;
+    }
+  }
+  

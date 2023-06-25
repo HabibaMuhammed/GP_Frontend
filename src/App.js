@@ -8,9 +8,12 @@ import "./App.css";
 import Labs from "./pages/Labs";
 import LabContent from "./pages/LabContent";
 import PageNotFound from "./components/error/Error";
+import LearningEnv from "./pages/LearningEnv";
 export const UserContext = createContext(null);
 export const LogoutContext = createContext(() => {});
 
+
+             
 const App = () => {
   const [user, setUser] = useState(null);
 
@@ -50,8 +53,9 @@ const App = () => {
               <Route path="/signup" element={<Signup />} />
               <Route path="/labs" element={<Labs />} />
               <Route path="/content" element={<LabContent />} />
+              <Route path="/learningcontent" element={<LearningEnv />}/>
              <Route path="*" Component={PageNotFound} />
-         
+             
             </Routes>
           </BrowserRouter>
         </LogoutContext.Provider>
