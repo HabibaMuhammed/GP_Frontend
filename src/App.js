@@ -8,6 +8,10 @@ import Signup from "./pages/Signup";
 import "./App.css";
 import Labs from "./pages/Labs";
 import LabContent from "./pages/LabContent";
+import UserProfile from "./pages/UserProfile";
+import Settings from "./pages/Settings";
+import Forget from "./pages/Forget";
+import ResetPassword from "./pages/ResetPassword";
 
 export const UserContext = createContext(null);
 export const LogoutContext = createContext(() => {});
@@ -51,6 +55,11 @@ const App = () => {
               <Route path="/signup" element={<Signup />} />
               <Route path="/labs" element={<Labs />} />
               <Route path="/content" element={<LabContent />} />
+              <Route path="/profile" element={<UserProfile />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/forget" element={<Forget />} />
+              <Route path="/reset" element={<ResetPassword />} />
+
             </Routes>
           </BrowserRouter>
         </LogoutContext.Provider>

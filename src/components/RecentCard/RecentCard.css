@@ -1,0 +1,27 @@
+.RecentCardContainer {
+  background-color: rgb(7, 32, 61);
+  width: 30%;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  padding: 10px;
+  text-align: center;
+}
+.RecentCardImg {
+  width: 7rem;
+  align-self: center;
+}
+.RecentCardFont {
+  font-family: Manrope;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 75px;
+  letter-spacing: -0.04em;
+  color: white;
+  text-align: center;
+}
+.RecentChallengesBody {
+  display: flex;
+  flex-direction: row;
+}
