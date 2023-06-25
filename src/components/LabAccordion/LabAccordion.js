@@ -109,15 +109,22 @@ export default function LabAccordion() {
         </Card.Header>
         <Accordion.Collapse eventKey="3">
           <Card.Body className="bodyText">
+    
             There are basically 3 types of SQL injection subcategorized into two
-            category: 1.In-band SQLi : This type of SQL injection is of simple
-            type and efficiency. This makes it the most common type of attack.
-            This is also categorized into 2 categories: -Error-based SQLi:
-            -Union-based SQLi: -Boolean SQLi 3.Out-of-band SQLi: This type of
-            attack is executed under two situations when attackers is not able
-            to use the same medium to launch the attack as well as gathered
-            information or when a server is either very laggy or unstable to
-            perform these certain types of actions.
+            category: <br />
+            <ol>
+              <li>
+                <h4>In-band SQLi :</h4> This type of SQL injection is of simple type and
+                efficiency. This makes it the most common type of attack.
+              </li>
+              <li>
+                <h4 >Out-of-band SQLi:</h4> This type of attack is executed under
+                two situations when attackers is not able to use the same medium
+                to launch the attack as well as gathered information or when a
+                server is either very laggy or unstable to perform these certain
+                types of actions.
+              </li>
+            </ol>
           </Card.Body>
         </Accordion.Collapse>
       </Card>

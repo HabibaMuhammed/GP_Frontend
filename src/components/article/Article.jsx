@@ -1,7 +1,7 @@
 import React from "react";
 import "./article.css";
 
-const Article = ({ imgUrl, date, text }) => (
+const Article = ({ imgUrl, date, text,url }) => (
   <div className="gp__blog-container_article">
     <div className="gp__blog-container_article-image">
       <img src={imgUrl} alt="blog_image" />
@@ -14,7 +14,7 @@ const Article = ({ imgUrl, date, text }) => (
         <br />
         <h3>{text}</h3>
       </div>
-      <p>Read Full Article &#8594;</p>
+      <a href={url}><p>Read Full Article &#8594;</p></a>
     </div>
   </div>
 );

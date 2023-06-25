@@ -11,4 +11,3 @@ export { default as Invite } from "./Invite/Invite";
 export { default as Performance } from "./Performance/Performance";
 export { default as LabAccordion } from "./LabAccordion/LabAccordion";
 export { default as VerticalLine } from "./VerticalLine/VerticalLine";
-

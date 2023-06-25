@@ -1,5 +1,5 @@
 import React from "react";
-import possibilityImage from "../../assets/Damage.png";
+import possibilityImage from "../../assets/damage.png";
 import "./damage.css";
 
 const Damage = () => (

@@ -9,12 +9,12 @@
   justify-content: flex-start;
   align-items: center;
 
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 
 .gpt3__possibility-image img {
-  width: 110%;
-  height: 100%;
+  width: 85%;
+  height: 80%;
 }
 
 .gpt3__possibility-content {
