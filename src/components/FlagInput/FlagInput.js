@@ -24,7 +24,7 @@ export default function FlagInput() {
 
     const data = { 
       flag: text,
-      labid: "642c9c9943d32fd779de6e6e",
+      labid: "64934e9cc233d0378579585c",
     };
 
     if (!text){
