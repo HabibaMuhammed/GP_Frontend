@@ -1,20 +1,44 @@
 import React from "react";
 import "./lab.css";
-import bruteforce from "../../assets/bruteforce.png";
-import xss from "../../assets/xss.png";
-import csrf from "../../assets/csrf.png";
-import sql from "../../assets/sqlinjection.png";
-import weakid from "../../assets/id.png";
-import file from "../../assets/fileupload.png";
+import learn from "../../assets/learn.png";
+import { useNavigate } from "react-router-dom";
 const Labs = ({ img, title }) => {
+  const navigate = useNavigate();
+  
+  const navigateToContent = () => {
+    const currentTime = new Date().toLocaleTimeString();
+    localStorage.setItem("labtime",currentTime);
+    navigate("/content"); 
+
+  };
+  const navigateTolearningContent = () => {
+    navigate("/learningcontent"); 
+  };
+ if(img === learn){
   return (
     <div className="labCard">
-      <img src={img} className="labCard__img" />
+      <img src={img} className="labCard__img" alt=""/>
       <div className="labCard__body">
         <h3 className="labCard__title">{title}</h3>
-        <button className="labCard__btn">Access Lab</button>
+        <button className="labCard__btn" onClick={navigateTolearningContent}>
+        Let's Begin
+        </button>
       </div>
     </div>
   );
+} else{
+  return(
+  <div className="labCard">
+  <img src={img} className="labCard__img" alt=""/>
+  <div className="labCard__body">
+    <h3 className="labCard__title">{title}</h3>
+    <button className="labCard__btn" onClick={navigateToContent}>
+    Access Lab
+    </button>
+  </div>
+</div>
+);
+
+  }
 };
 export default Labs;

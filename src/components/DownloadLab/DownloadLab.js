@@ -1,19 +1,17 @@
 import React from "react";
-import axios from "axios";
 import "./DownloadLab.css";
 import download from "../../assets/Download.png";
 
 export default function DownloadLab() {
   const downloadFile = () => {
     const link = document.createElement("a");
-    link.href = "http://localhost:5001/Container/sqlinjection_lab.rar";
+    link.href = "http://localhost:5001/Container/sqlinjection.rar";
     link.download = "Lab";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    var today = new Date();
-    var downloadtime =
-      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+   
+    var downloadtime =new Date().toLocaleTimeString();
     localStorage.setItem("downloadTime", downloadtime);
   };
   return (

@@ -5,6 +5,8 @@ import "./LabAccordion.css";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import DownloadLab from "../DownloadLab/DownloadLab";
 import FlagInput from "../FlagInput/FlagInput";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function CustomToggle({ children, eventKey }) {
   const decoratedOnClick = useAccordionButton(eventKey, () =>
@@ -107,15 +109,22 @@ export default function LabAccordion() {
         </Card.Header>
         <Accordion.Collapse eventKey="3">
           <Card.Body className="bodyText">
+    
             There are basically 3 types of SQL injection subcategorized into two
-            category: 1.In-band SQLi : This type of SQL injection is of simple
-            type and efficiency. This makes it the most common type of attack.
-            This is also categorized into 2 categories: -Error-based SQLi:
-            -Union-based SQLi: -Boolean SQLi 3.Out-of-band SQLi: This type of
-            attack is executed under two situations when attackers is not able
-            to use the same medium to launch the attack as well as gathered
-            information or when a server is either very laggy or unstable to
-            perform these certain types of actions.
+            category: <br />
+            <ol>
+              <li>
+                <h4>In-band SQLi :</h4> This type of SQL injection is of simple type and
+                efficiency. This makes it the most common type of attack.
+              </li>
+              <li>
+                <h4 >Out-of-band SQLi:</h4> This type of attack is executed under
+                two situations when attackers is not able to use the same medium
+                to launch the attack as well as gathered information or when a
+                server is either very laggy or unstable to perform these certain
+                types of actions.
+              </li>
+            </ol>
           </Card.Body>
         </Accordion.Collapse>
       </Card>
@@ -130,12 +139,30 @@ export default function LabAccordion() {
         </Card.Header>
         <Accordion.Collapse eventKey="4">
           <Card.Body className="bodyText">
-            Some of the ways to protect yourself against SQL Injection are:
+            <h2>
+              Some of the ways to protect yourself against SQL Injection are:
+            </h2>
             <br />
-            1.Input Validation and Sanitation.
-            <br /> 2.Use Prepared Statements with Parameterized queries. 3.
-            Continuous Scanning and Penetration Testing 4. Restrict Privileges
-            on database
+            <ol>
+              <li>Input Validation and Sanitation.</li>
+              <li>
+                Use Prepared Statements with Parameterized queries.
+                <SyntaxHighlighter language="php" style={atomDark}>
+                  {`
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$mysqli = new mysqli("example.com", "user", "password", "database");
+
+/* Non-prepared statement /
+$mysqli->query("DROP TABLE IF EXISTS test");
+$mysqli->query("CREATE TABLE test(id INT, label TEXT)");
+
+/ Prepared statement, stage 1: prepare /
+$stmt = $mysqli->prepare("INSERT INTO test(id, label) VALUES (?, ?)");`}
+                </SyntaxHighlighter>
+              </li>
+              <li>Continuous Scanning and Penetration Testing</li>
+              <li>Restrict Privileges on database</li>
+            </ol>
           </Card.Body>
         </Accordion.Collapse>
       </Card>

@@ -1,29 +1,37 @@
 import React, { useState } from "react";
 import axios from "axios";
-
 import "./FlagInput.css";
 import Toast from "../Toast/Toast";
 export default function FlagInput() {
   const [text, setText] = useState("");
   const [solved, setSolved] = useState(false);
   const [showToast, setShowToast] = useState(false);
-
+  const [errorMessages, setErrorMessages] = useState({});
   const [buttonText, setButtonText] = useState("Submit");
 
+  const errors={
+    noFlagInput: "Please enter a flag"
+  };
   const handleChange = (e) => {
     setText(e.target.value);
   };
 
   const handleSubmit = (e) => {
     const token = JSON.parse(localStorage.getItem("token"));
-    
     e.preventDefault();
+    console.log(token);
     const reqURL = "http://localhost:5001/api/labs/evaluate";
 
-    const data = {
+    const data = { 
       flag: text,
-      labid: "642e11ce831f18ea28471154",
+      labid: "64934e9cc233d0378579585c",
     };
+
+    if (!text){
+      setErrorMessages({ name: "noFlagInput", message: errors.noFlagInput });
+      return;
+    } 
+
     setShowToast(true);
     axios
       .post(reqURL, data, {
@@ -33,13 +41,13 @@ export default function FlagInput() {
       })
       .then((response) => {
         if (response.data.message === "Success") {
-         
-          var today = new Date();
-          var submittime=today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
-    
-          localStorage.setItem("submitTime", submittime);
+          var finishtime =new Date().toLocaleTimeString();
+           localStorage.setItem("finishtime",finishtime);
           setSolved(true);
-        } else {
+          
+          
+        }
+        else{
           setSolved(false);
         }
       })
@@ -51,6 +59,10 @@ export default function FlagInput() {
     }, 3000);
   };
 
+  const renderErrorMsg = (name) =>
+  name === errorMessages.name && (
+    <p className="error_msg">{errorMessages.message}</p>
+  );
   return (
     <div className="inputContainer">
       <input
@@ -65,6 +77,8 @@ export default function FlagInput() {
       </button>
       {solved && showToast && <Toast success={solved} />}
       {!solved && showToast && <Toast success={solved} />}
+      {renderErrorMsg("text")}
+     {renderErrorMsg("noFlagInput")}
     </div>
   );
 }

@@ -14,6 +14,37 @@
   border-radius: 50px 0px 0px 50px;
   outline: none;
 }
+.error_msg {
+  color:#FF4820;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.inputBtn {
+  width: 20%;
+  background: #ae67fa;
+  color: white;
+  height: 60px;
+  border-width: 0px;
+  border-radius: 0px 50px 50px 0px;
+}
+.inputContainer {
+  display: block;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+}
+.inputField,
+.inputField:focus,
+.inputField:active {
+  height: 60px;
+  width: 80%;
+  padding: 15px;
+  border-width: 0px;
+  border-radius: 50px 0px 0px 50px;
+  outline: none;
+}
 
 .inputBtn {
   width: 20%;

@@ -1,0 +1,23 @@
+.UserProfilePerformanceContainer {
+  background-color: #042c54;
+  border-radius: 30px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 10px;
+  width: 70%;
+}
+.PerformanceTitle {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  background: -webkit-linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.UserProfilePerformanceSub {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}

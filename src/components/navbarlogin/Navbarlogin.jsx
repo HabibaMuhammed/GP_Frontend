@@ -1,7 +1,7 @@
 import "./navbarlogin.css";
 import React, { useContext } from "react";
 import User from "../../assets/user.png";
-import bell from "../../assets/bell.png";
+
 import { Link } from "react-router-dom";
 import { LogoutContext } from "../../App";
 import { useNavigate } from "react-router-dom";
@@ -29,7 +29,9 @@ const Navbarlogin = ({ user }) => {
           <p>
             <a href="#what">What is X-defense?</a>
           </p>
-          <p><Link to ="/labs">Labs</Link></p>
+          <p>
+            <Link to="/labs">Labs</Link>
+          </p>
         </div>
       </div>
       <div className="gp__navbar-user">
@@ -39,10 +41,6 @@ const Navbarlogin = ({ user }) => {
       <button className="logoutBtn" type="button" onClick={onLogoutClick}>
         Log Out
       </button>
-
-      <div className="icons">
-        <img src={bell} alt="nofication" />
-      </div>
     </div>
   );
 };

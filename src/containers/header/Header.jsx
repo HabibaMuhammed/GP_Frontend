@@ -1,7 +1,7 @@
 import React from "react";
-import people from "../../assets/people.png";
 import sec from "../../assets/sec.png";
 import "./header.css";
+
 
 const Header = () => (
   <div className="gp__header section__padding" id="home">
@@ -14,15 +14,7 @@ const Header = () => (
         the companies that ultimately are the most successful.
       </p>
 
-      <div className="gp__header-content__input">
-        <input type="email" placeholder="Your Email Address" />
-        <button type="button">Get Started</button>
-      </div>
-
-      <div className="gp__header-content__people">
-        <img src={people} alt="ppl" />
-        <p>1,600 people requested access a visit in last 24 hours</p>
-      </div>
+      
     </div>
 
     <div className="gp__header-image">
