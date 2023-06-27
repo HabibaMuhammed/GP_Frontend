@@ -41,7 +41,11 @@ export default function FlagInput() {
       })
       .then((response) => {
         if (response.data.message === "Success") {
+          var finishtime =new Date().toLocaleTimeString();
+           localStorage.setItem("finishtime",finishtime);
           setSolved(true);
+          
+          
         }
         else{
           setSolved(false);

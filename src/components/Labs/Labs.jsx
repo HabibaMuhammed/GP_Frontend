@@ -6,7 +6,10 @@ const Labs = ({ img, title }) => {
   const navigate = useNavigate();
   
   const navigateToContent = () => {
-    navigate("/content"); // Redirect to the "/content" page
+    const currentTime = new Date().toLocaleTimeString();
+    localStorage.setItem("labtime",currentTime);
+    navigate("/content"); 
+
   };
   const navigateTolearningContent = () => {
     navigate("/learningcontent"); 
@@ -14,7 +17,7 @@ const Labs = ({ img, title }) => {
  if(img === learn){
   return (
     <div className="labCard">
-      <img src={img} className="labCard__img" />
+      <img src={img} className="labCard__img" alt=""/>
       <div className="labCard__body">
         <h3 className="labCard__title">{title}</h3>
         <button className="labCard__btn" onClick={navigateTolearningContent}>
@@ -26,7 +29,7 @@ const Labs = ({ img, title }) => {
 } else{
   return(
   <div className="labCard">
-  <img src={img} className="labCard__img" />
+  <img src={img} className="labCard__img" alt=""/>
   <div className="labCard__body">
     <h3 className="labCard__title">{title}</h3>
     <button className="labCard__btn" onClick={navigateToContent}>
