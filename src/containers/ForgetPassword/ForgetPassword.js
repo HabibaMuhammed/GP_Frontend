@@ -1,9 +1,40 @@
 import React, { useState } from "react";
 import "./ForgetPassword.css";
+import axios from "axios";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
+
+import { Slide, ToastContainer, toast } from "react-toastify";
 export default function ForgetPassword() {
   const [email, setEmail] = useState("");
-  const handleClick = () => {
-    // Perform additional logic here
+  const navigate = useNavigate();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    const reqURL = "http://localhost:5001/api/user/sendcode";
+    const data = {
+      email: email,
+    };
+    if (!email) {
+      toast.error("Please fill the email", { transition: Slide });
+      return;
+    }
+    axios
+      .patch(reqURL, data)
+      .then((response) => {
+        if (response.data.message === "Done check ur email") {
+          toast.success("Check your email !", { transition: Slide });
+          setTimeout(() => {
+            navigate("/otp");
+          }, 5000); // Delay for 10 seconds (10000 milliseconds)
+        } else {
+          toast.error("Not register account", { transition: Slide });
+        }
+      })
+      .catch((error) => {
+        toast.error("Not registered account", { transition: Slide });
+      });
+    setTimeout(() => {}, 3000);
   };
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -22,8 +53,9 @@ export default function ForgetPassword() {
             onChange={handleEmailChange}
           />
           <button onClick={handleClick} className="ForgetPasswordBtn">
-           Send
+            Send
           </button>
+          <ToastContainer />
         </div>
       </div>
     </div>

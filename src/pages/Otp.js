@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
-import ChangePassword from "../containers/ChangePassword/ChangePassword";
-import { NavLink } from "react-router-dom";
+import React,{useContext} from "react";
+import OTP from "../containers/OTP/OTP";
 import { Navbar } from "../components";
 import { UserContext } from "../App";
 import Error404 from "../components/error/Error";
 
-export default function ResetPassword() {
+export default function Otp() {
   const user = useContext(UserContext);
 
   return (
@@ -13,7 +12,7 @@ export default function ResetPassword() {
       {!user && (
         <div>
           <Navbar />
-          <ChangePassword />
+          <OTP />
         </div>
       )}
       {user && (

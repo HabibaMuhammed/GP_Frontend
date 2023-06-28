@@ -9,11 +9,9 @@ import {
   TuneOutlined,
 } from "@mui/icons-material";
 import "./SideBar.css";
-import {LogoutContext} from "../../App";
+import { LogoutContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 
-
- 
 function SideBar() {
   const handleLogout = useContext(LogoutContext);
   const navigate = useNavigate();
@@ -23,9 +21,17 @@ function SideBar() {
     navigate("/");
   };
   const Tohomeclick = () => {
-   
     navigate("/");
   };
+  const toSettings = () => {
+    navigate("/settings");
+  };
+  const toProfile = () => {
+    navigate("/profile");
+  };
+
+
+
   const { collapseSidebar } = useProSidebar();
   return (
     <div className="sideBar">
@@ -44,24 +50,32 @@ function SideBar() {
             {" "}
             <h2>X-Defense</h2>
           </MenuItem>
-          <MenuItem icon={<HomeOutlinedIcon sx={{ color: grey[500] }} />}onClick={
-            Tohomeclick
-            } >
+          <MenuItem
+            icon={<HomeOutlinedIcon sx={{ color: grey[500] }} />}
+            onClick={Tohomeclick}
+          >
             Home
           </MenuItem>
           <MenuItem
             bgcolor="black"
-            icon={<AccountCircle sx={{ color: grey[500] }} />}
+            icon={
+              <AccountCircle sx={{ color: grey[500] }} onClick={toProfile} />
+            }
           >
             Profile
           </MenuItem>
-         
-          <MenuItem icon={<TuneOutlined sx={{ color: grey[500] }} />}>
+
+          <MenuItem
+            icon={
+              <TuneOutlined sx={{ color: grey[500] }} onClick={toSettings} />
+            }
+          >
             Settings
           </MenuItem>
-          <MenuItem icon={<LogoutOutlined sx={{ color: grey[500] }} /> } onClick={
-            onLogoutClick
-            }>
+          <MenuItem
+            icon={<LogoutOutlined sx={{ color: grey[500] }} />}
+            onClick={onLogoutClick}
+          >
             Logout
           </MenuItem>
         </Menu>

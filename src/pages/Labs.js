@@ -14,7 +14,7 @@ export default function Labs() {
       {user && <NavbarLab user={user} />}
       <Labcard />
       {user && <SideBar />}
-      <UserBar/>
+      {/* <UserBar/> */}
     </>
   );
 }
