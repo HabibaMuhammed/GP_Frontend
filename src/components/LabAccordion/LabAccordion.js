@@ -7,6 +7,8 @@ import DownloadLab from "../DownloadLab/DownloadLab";
 import FlagInput from "../FlagInput/FlagInput";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import ConvertTextToHtml from "../ConvertTextToHtml/ConvertTextToHtml";
+import ConvertTextToHtmlComponent from "../ConvertTextToHtml/ConvertTextToHtml";
 
 function CustomToggle({ children, eventKey }) {
   const decoratedOnClick = useAccordionButton(eventKey, () =>
@@ -38,11 +40,11 @@ export default function LabAccordion() {
         </Card.Header>
         <Accordion.Collapse eventKey="0">
           <Card.Body className="bodyText">
-            SQL stands for (Structure Query Language), this language is a
-            backend language that helps in managing the database, this language
-            can edit the database and further can retrieve it, and also can
-            update, delete, and create a new database data is stored in the
-            database in the form of tables, row, and columns.
+            <ConvertTextToHtmlComponent htmlString = {`<p>SQL stands for (Structure Query Language), this language is a
+  backend language that helps in managing the database, this language
+  can edit the database and further can retrieve it,<br> <br> and also can
+  update, delete, and create a new database data is stored in the
+  database in the form of tables, row, and columns.</p>`} />
           </Card.Body>
         </Accordion.Collapse>
       </Card>

@@ -12,6 +12,8 @@ import LearningEnv from "./pages/LearningEnv";import UserProfile from "./pages/U
 import Settings from "./pages/Settings";
 import Forget from "./pages/Forget";
 import ResetPassword from "./pages/ResetPassword";
+import Try from "./pages/Try";
+import Otp from "./pages/Otp";
 
 export const UserContext = createContext(null);
 export const LogoutContext = createContext(() => {});
@@ -59,6 +61,8 @@ const App = () => {
               <Route path="/settings" element={<Settings />} />
               <Route path="/forget" element={<Forget />} />
               <Route path="/reset" element={<ResetPassword />} />
+              <Route path="/try" element={<Try />} />
+              <Route path="/otp" element={<Otp />} />
 
               <Route path="/learningcontent" element={<LearningEnv />}/>
              <Route path="*" Component={PageNotFound} />

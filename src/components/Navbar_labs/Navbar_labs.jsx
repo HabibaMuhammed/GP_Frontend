@@ -29,9 +29,11 @@ const Navbar_labs = ({ user }) => {
           </p>
         </div>
       </div>
-      <div className="gp__navbar-user">
+      <div className="gp__navbar-user gp__navbar-links_container">
         <img src={User} alt="user" />
-        <p>{user}</p>
+        <p>
+            <Link to="/profile">{user}</Link>
+          </p>
       </div>
       <button className="logoutBtn" type="button" onClick={onLogoutClick}>
         Log Out

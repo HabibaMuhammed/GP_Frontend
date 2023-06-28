@@ -16,7 +16,7 @@ export default function Labs() {
       <Search_Lab />
       <Labcard />
       {user && <SideBar />}
-      <UserBar/>
+      {/* <UserBar/> */}
     </>
   );
 }
