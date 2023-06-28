@@ -24,7 +24,7 @@ export default function FlagInput() {
 
     const data = { 
       flag: text,
-      labid: "642c9c9943d32fd779de6e6e",
+      labid: "64934e9cc233d0378579585c",
     };
 
     if (!text){
@@ -41,7 +41,11 @@ export default function FlagInput() {
       })
       .then((response) => {
         if (response.data.message === "Success") {
+          var finishtime =new Date().toLocaleTimeString();
+           localStorage.setItem("finishtime",finishtime);
           setSolved(true);
+          
+          
         }
         else{
           setSolved(false);
