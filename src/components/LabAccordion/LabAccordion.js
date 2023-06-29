@@ -22,7 +22,7 @@ function CustomToggle({ children, eventKey }) {
   );
 }
 
-export default function LabAccordion() {
+export default function LabAccordion({ headers, content }) {
   return (
     <Accordion
       defaultActiveKey={["0", "5"]}
@@ -32,7 +32,7 @@ export default function LabAccordion() {
       <Card className="AccordionCard">
         <Card.Header className="try ButtonTxt">
           <CustomToggle eventKey="0">
-            1. Introduction
+            {headers[0]}
             <span className="arrow align-self-end">
               <MdKeyboardArrowDown />
             </span>
@@ -40,18 +40,14 @@ export default function LabAccordion() {
         </Card.Header>
         <Accordion.Collapse eventKey="0">
           <Card.Body className="bodyText">
-            <ConvertTextToHtmlComponent htmlString = {`<p>SQL stands for (Structure Query Language), this language is a
-  backend language that helps in managing the database, this language
-  can edit the database and further can retrieve it,<br> <br> and also can
-  update, delete, and create a new database data is stored in the
-  database in the form of tables, row, and columns.</p>`} />
+            <ConvertTextToHtmlComponent htmlString={content[0]} />
           </Card.Body>
         </Accordion.Collapse>
       </Card>
       <Card className="AccordionCard">
         <Card.Header className="try ButtonTxt">
           <CustomToggle eventKey="1">
-            2. What's SQL injection?
+            {headers[1]}
             <span className="arrow align-self-end">
               <MdKeyboardArrowDown />
             </span>
@@ -59,26 +55,14 @@ export default function LabAccordion() {
         </Card.Header>
         <Accordion.Collapse eventKey="1">
           <Card.Body className="bodyText">
-            SQL Injection is a vulnerability that occurs when an attacker can
-            fetch information from the SQL Database. This is usually the
-            information they shouldn't have access to. It could range from
-            access to credentials and sensitive tokens to bypassing
-            authentication, exfiltrating data, and installing back doors.Only
-            SQL-type databases are vulnerable to this attack, called a SQLi
-            Vulnerability. A SQL injection can occur by insertion or “injection”
-            of a SQL query via the input data from the client to the
-            application. If a web application accepts a web form, input
-            parameter (e.g., Search Query), cookie, etc., without validating and
-            passing them directly to the database server. The database server
-            interprets the input as code rather than data and ends up executing
-            it. It can have severe consequences .
+            <ConvertTextToHtmlComponent htmlString={content[1]} />
           </Card.Body>
         </Accordion.Collapse>
       </Card>
       <Card className="AccordionCard">
         <Card.Header className="try ButtonTxt">
           <CustomToggle eventKey="2">
-            3. How can SQL Injection harm ?{" "}
+            {headers[2]}
             <span className="arrow align-self-end">
               <MdKeyboardArrowDown />
             </span>
@@ -86,24 +70,14 @@ export default function LabAccordion() {
         </Card.Header>
         <Accordion.Collapse eventKey="2">
           <Card.Body className="bodyText">
-            SQL injection is a critical vulnerability that needs to be fixed as
-            fast as possible, not only it harms goodwill but it also harms user
-            experience. It is such a critical vulnerability that the national
-            vulnerability database has given it a 9.8 (critical) score. Any
-            hacker can dump all the content present in the database by just some
-            simple clicking A successful SQL injection exploit can read
-            sensitive data from the database, modify database data
-            (Insert/Update/Delete), execute administration operations on the
-            database (such as shutdown the DBMS), recover the content of a given
-            file present on the DBMS file system and in some cases issue
-            commands to the operating system.
+            <ConvertTextToHtmlComponent htmlString={content[2]} />
           </Card.Body>
         </Accordion.Collapse>
       </Card>
       <Card className="AccordionCard">
         <Card.Header className="try ButtonTxt">
           <CustomToggle eventKey="3">
-            4. Types of SQL Injection{" "}
+            {headers[3]}
             <span className="arrow align-self-end">
               <MdKeyboardArrowDown />
             </span>
@@ -111,29 +85,14 @@ export default function LabAccordion() {
         </Card.Header>
         <Accordion.Collapse eventKey="3">
           <Card.Body className="bodyText">
-    
-            There are basically 3 types of SQL injection subcategorized into two
-            category: <br />
-            <ol>
-              <li>
-                <h4>In-band SQLi :</h4> This type of SQL injection is of simple type and
-                efficiency. This makes it the most common type of attack.
-              </li>
-              <li>
-                <h4 >Out-of-band SQLi:</h4> This type of attack is executed under
-                two situations when attackers is not able to use the same medium
-                to launch the attack as well as gathered information or when a
-                server is either very laggy or unstable to perform these certain
-                types of actions.
-              </li>
-            </ol>
+            <ConvertTextToHtmlComponent htmlString={content[3]} />
           </Card.Body>
         </Accordion.Collapse>
       </Card>
       <Card className="AccordionCard">
         <Card.Header className="try ButtonTxt">
           <CustomToggle eventKey="4">
-            5. SQL Injection prevention{" "}
+            {headers[4]}
             <span className="arrow align-self-end">
               <MdKeyboardArrowDown />
             </span>
@@ -141,37 +100,17 @@ export default function LabAccordion() {
         </Card.Header>
         <Accordion.Collapse eventKey="4">
           <Card.Body className="bodyText">
-            <h2>
-              Some of the ways to protect yourself against SQL Injection are:
-            </h2>
-            <br />
-            <ol>
-              <li>Input Validation and Sanitation.</li>
-              <li>
-                Use Prepared Statements with Parameterized queries.
-                <SyntaxHighlighter language="php" style={atomDark}>
-                  {`
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$mysqli = new mysqli("example.com", "user", "password", "database");
-
-/* Non-prepared statement /
-$mysqli->query("DROP TABLE IF EXISTS test");
-$mysqli->query("CREATE TABLE test(id INT, label TEXT)");
-
-/ Prepared statement, stage 1: prepare /
-$stmt = $mysqli->prepare("INSERT INTO test(id, label) VALUES (?, ?)");`}
-                </SyntaxHighlighter>
-              </li>
-              <li>Continuous Scanning and Penetration Testing</li>
-              <li>Restrict Privileges on database</li>
-            </ol>
+            <ConvertTextToHtmlComponent htmlString={content[4]} />
+            <SyntaxHighlighter language="php" style={atomDark}>
+              {content[5]}
+            </SyntaxHighlighter>
           </Card.Body>
         </Accordion.Collapse>
       </Card>
       <Card className="AccordionCard">
         <Card.Header className="try ButtonTxt">
           <CustomToggle eventKey="5">
-            6. Practice Time{" "}
+            Practice Time{" "}
             <span className="arrow align-self-end">
               <MdKeyboardArrowDown />
             </span>

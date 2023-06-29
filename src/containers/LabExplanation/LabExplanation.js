@@ -5,11 +5,12 @@ import LabStats from "../LabStats/LabStats";
 
 import Toast from "../../components/Toast/Toast";
 
-export default function LabExplanation() {
+export default function LabExplanation({headers,content}) {
+  console.log(headers);
   return (
     <div className="explanationContainer">
       <div className="accord">
-        <LabAccordion />
+        <LabAccordion headers={headers} content={content} />
         <VerticalLine />
       </div>
       <div className="rest">

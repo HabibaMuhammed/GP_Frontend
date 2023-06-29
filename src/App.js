@@ -67,7 +67,7 @@ const App = () => {
               <Route path="/learningcontent" element={<LearningEnv />}/>
              <Route path="*" Component={PageNotFound} />
              
-              <Route path="/content" element={<LabContent />} />
+              <Route path="/content/:title" element={<LabContent />} />
             </Routes>
           </BrowserRouter>
         </LogoutContext.Provider>
