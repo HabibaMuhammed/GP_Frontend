@@ -8,7 +8,7 @@ const Labcard = () => {
   const [componentsData, setComponentsData] = useState([]);
   const fetchData = async () => {
     const response = await fetch("http://localhost:5001/api/labs/Fetchlabs");
-    
+
     const data = await response.json();
     setComponentsData(data);
   };
@@ -28,13 +28,10 @@ const Labcard = () => {
             ? componentsData.labs.map((it) => {
                 return (
                   <>
-                   
                     <Labs
-                     
                       img={`${imgbaseUrl}${it.icon}`}
                       title={it.name}
                     ></Labs>
-                   
                   </>
                 );
               })

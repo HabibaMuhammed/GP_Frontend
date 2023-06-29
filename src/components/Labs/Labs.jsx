@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 const Labs = ({ img, title }) => {
   const navigate = useNavigate();
   
-  const navigateToContent = () => {
+  const navigateToContent = (title) => {
     const currentTime = new Date().toLocaleTimeString();
     localStorage.setItem("labtime",currentTime);
-    navigate("/content"); 
+    navigate(`/content/${(title.title)}`);
 
   };
   const navigateTolearningContent = () => {
@@ -32,7 +32,7 @@ const Labs = ({ img, title }) => {
   <img src={img} className="labCard__img" alt=""/>
   <div className="labCard__body">
     <h3 className="labCard__title">{title}</h3>
-    <button className="labCard__btn" onClick={navigateToContent}>
+    <button className="labCard__btn" onClick={()=>navigateToContent({title})}>
     Access Lab
     </button>
   </div>
