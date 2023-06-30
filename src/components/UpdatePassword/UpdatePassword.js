@@ -8,11 +8,7 @@ export default function UpdatePassword() {
   const [oldPassword, setOldPassword] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setErrorMessages] = useState("");
 
-  const errors={
-    missingInput: "Please fill all fields"
-  };
   const handleSubmit = (e) => {
     const token = JSON.parse(localStorage.getItem("token"));
     e.preventDefault();
@@ -27,7 +23,6 @@ export default function UpdatePassword() {
     if (!oldPassword || !password || !confirmPassword){
       toast.error("Missing Fields",{transition:Slide})
 
-      setErrorMessages({ name: "missingInput", message: errors.missingInput });
       return;
     }
 

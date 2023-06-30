@@ -15,7 +15,10 @@ export default function LabContent() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post("http://localhost:5001/api/labs/Fetchlab", { name: title });
+        const response = await axios.post(
+          "http://localhost:5001/api/labs/Fetchlab",
+          { name: title }
+        );
         setData(response.data);
         console.log("Fetched data:", response.data);
         setIsLoading(false); // Update loading state when data is fetched successfully
@@ -27,18 +30,20 @@ export default function LabContent() {
 
     fetchData();
   }, []);
-
-  console.log("Title:", title); // Check the decoded title value in the console
-  console.log("Data:", data); // Check the structure and values of the fetched data
-
+  const imgbaseUrl = "http://localhost:5001/";
   return (
     <>
       {!user && <Navbar />}
       {user && <NavbarLab user={user} />}
       {!isLoading && data.labs && (
         <>
-          <LabHeader name={data.labs.name} />
-          <LabExplanation headers={data.labs.headers} content={data.labs.headers_content}/>
+          <LabHeader name={data.labs.name} img={`${imgbaseUrl}${data.labs.icon}`} />
+          <LabExplanation
+            headers={data.labs.headers}
+            content={data.labs.headers_content}
+            id={data.labs._id}
+            container={data.labs.Containers}
+          />
         </>
       )}
     </>

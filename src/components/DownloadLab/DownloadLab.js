@@ -2,10 +2,12 @@ import React from "react";
 import "./DownloadLab.css";
 import download from "../../assets/Download.png";
 
-export default function DownloadLab() {
+export default function DownloadLab({container}) {
   const downloadFile = () => {
     const link = document.createElement("a");
-    link.href = "http://localhost:5001/Container/sqlinjection.rar";
+    const imgbaseUrl = "http://localhost:5001/";
+
+    link.href = `${imgbaseUrl}${container}` ;
     link.download = "Lab";
     document.body.appendChild(link);
     link.click();

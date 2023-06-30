@@ -8,10 +8,12 @@
   padding: 10px;
   text-align: center;
 }
+
 .RecentCardImg {
   width: 7rem;
   align-self: center;
 }
+
 .RecentCardFont {
   font-family: Manrope;
   font-size: 25px;
@@ -21,7 +23,29 @@
   color: white;
   text-align: center;
 }
+
 .RecentChallengesBody {
   display: flex;
   flex-direction: row;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .RecentCardContainer {
+    width: 100%;
+    margin-right: 0;
+  }
+  
+  .RecentCardImg {
+    width: 5rem;
+  }
+  
+  .RecentCardFont {
+    font-size: 20px;
+    line-height: 50px;
+  }
+  
+  .RecentChallengesBody {
+    flex-direction: column;
+  }
 }
