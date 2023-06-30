@@ -1,14 +1,27 @@
-import React from "react";
+import { useContext } from "react";
 import "./lab.css";
 import learn from "../../assets/learn.png";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../App";
+
 const Labs = ({ img, title }) => {
   const navigate = useNavigate();
+  const user = useContext (UserContext);
   
   const navigateToContent = (title) => {
-    const currentTime = new Date().toLocaleTimeString();
-    localStorage.setItem("labtime",currentTime);
-    navigate(`/content/${(title.title)}`);
+    console.log(user);
+    if(!user)
+    {
+
+      navigate('/login');
+    }
+    else{
+
+      const currentTime = new Date().toLocaleTimeString();
+      localStorage.setItem("labtime",currentTime);
+      navigate(`/content/${(title.title)}`);
+    }
+
 
   };
   const navigateTolearningContent = () => {

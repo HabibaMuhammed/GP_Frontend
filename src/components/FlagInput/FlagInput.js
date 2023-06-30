@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./FlagInput.css";
 import Toast from "../Toast/Toast";
-export default function FlagInput() {
+export default function FlagInput({ id }) {
   const [text, setText] = useState("");
   const [solved, setSolved] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const [errorMessages, setErrorMessages] = useState({});
   const [buttonText, setButtonText] = useState("Submit");
 
-  const errors={
-    noFlagInput: "Please enter a flag"
+  const errors = {
+    noFlagInput: "Please enter a flag",
   };
   const handleChange = (e) => {
     setText(e.target.value);
@@ -22,15 +22,15 @@ export default function FlagInput() {
     console.log(token);
     const reqURL = "http://localhost:5001/api/labs/evaluate";
 
-    const data = { 
+    const data = {
       flag: text,
-      labid: "64934e9cc233d0378579585c",
+      labid: id,
     };
 
-    if (!text){
+    if (!text) {
       setErrorMessages({ name: "noFlagInput", message: errors.noFlagInput });
       return;
-    } 
+    }
 
     setShowToast(true);
     axios
@@ -41,13 +41,10 @@ export default function FlagInput() {
       })
       .then((response) => {
         if (response.data.message === "Success") {
-          var finishtime =new Date().toLocaleTimeString();
-           localStorage.setItem("finishtime",finishtime);
+          var finishtime = new Date().toLocaleTimeString();
+          localStorage.setItem("finishtime", finishtime);
           setSolved(true);
-          
-          
-        }
-        else{
+        } else {
           setSolved(false);
         }
       })
@@ -60,9 +57,9 @@ export default function FlagInput() {
   };
 
   const renderErrorMsg = (name) =>
-  name === errorMessages.name && (
-    <p className="error_msg">{errorMessages.message}</p>
-  );
+    name === errorMessages.name && (
+      <p className="error_msg">{errorMessages.message}</p>
+    );
   return (
     <div className="inputContainer">
       <input
@@ -78,7 +75,7 @@ export default function FlagInput() {
       {solved && showToast && <Toast success={solved} />}
       {!solved && showToast && <Toast success={solved} />}
       {renderErrorMsg("text")}
-     {renderErrorMsg("noFlagInput")}
+      {renderErrorMsg("noFlagInput")}
     </div>
   );
 }

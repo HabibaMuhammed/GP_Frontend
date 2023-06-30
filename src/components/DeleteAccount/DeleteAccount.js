@@ -65,6 +65,7 @@ export default function DeleteAccount() {
         <button onClick={handleClick} className="DeleteAccountBtn">
           Delete My Account
         </button>
+        <ToastContainer/>
       </div>
     </div>
   );

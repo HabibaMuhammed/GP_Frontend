@@ -30,6 +30,8 @@ const RecentChallenges = () => {
 
     fetchrecentchallenges();
   }, []);
+  const imgbaseUrl = "http://localhost:5001/";
+
   return (
     <div className="RecentChallengesContainer">
       <div className="RecentChallengesSubContainer">
@@ -37,9 +39,8 @@ const RecentChallenges = () => {
         <div className="RecentChallengesBody">
           {
             recentChallenges.map((challenge, index) => {
-              console.log("🚀 ~ file: RecentChallenges.js:40 ~ recentChallenges.map ~ challenge:", challenge)
               return (
-                <RecentCard img={challenge.icon} name={challenge.lab_id.name} />
+                index<3 && <RecentCard img={`${imgbaseUrl}${challenge.lab_id.icon}`} name={challenge.lab_id.name} />
               );
             })
          }

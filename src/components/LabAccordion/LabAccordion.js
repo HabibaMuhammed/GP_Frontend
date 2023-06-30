@@ -7,7 +7,6 @@ import DownloadLab from "../DownloadLab/DownloadLab";
 import FlagInput from "../FlagInput/FlagInput";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import ConvertTextToHtml from "../ConvertTextToHtml/ConvertTextToHtml";
 import ConvertTextToHtmlComponent from "../ConvertTextToHtml/ConvertTextToHtml";
 
 function CustomToggle({ children, eventKey }) {
@@ -22,7 +21,7 @@ function CustomToggle({ children, eventKey }) {
   );
 }
 
-export default function LabAccordion({ headers, content }) {
+export default function LabAccordion({ headers, content ,id,container}) {
   return (
     <Accordion
       defaultActiveKey={["0", "5"]}
@@ -118,8 +117,8 @@ export default function LabAccordion({ headers, content }) {
         </Card.Header>
         <Accordion.Collapse eventKey="5" className="practice">
           <Card.Body>
-            <DownloadLab />
-            <FlagInput />
+            <DownloadLab container={container}/>
+            <FlagInput id={id}/>
           </Card.Body>
         </Accordion.Collapse>
       </Card>

@@ -3,7 +3,7 @@ import axios from "axios";
 import * as Yup from 'yup';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useForm} from 'react-hook-form';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 import { Slide, ToastContainer,toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -97,9 +97,9 @@ const LoginForm = ({onLogin}) => {
         <ToastContainer/>
       </form>
       <div className="link_container">
-        <a href="" className="small">
+        <Link to="/forget" className="small">
           Forgot Password?
-        </a>
+        </Link>
       </div>
       <div className="link_container">
         <a href="" className="small" onClick={navigatesignup}>
