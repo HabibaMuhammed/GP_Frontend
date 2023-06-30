@@ -154,10 +154,8 @@ const SignUpForm = () => {
         <ToastContainer/>
       </form>
       </Card>
-    <div> 
     <p className="quote">Start learning blue team skills with hands-on courses</p>
     <img src={bg} alt="" className="img2" />
-    </div>
     </div>
   );
 };

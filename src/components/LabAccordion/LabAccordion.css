@@ -3,20 +3,27 @@
   width: 100%;
 }
 .AccordionCard {
-  display: flex;
+  display: block;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   text-align: left;
   width: 100%;
   height: auto;
   background: linear-gradient(144.39deg, #02121b -78.42%, #124c89 91.61%);
   margin-bottom: 20px;
-  padding: 30px;
+  padding-top: 15px;
   border-radius: 100px;
   color: #c4d3e1;
   
 }
-
+.arrow {
+  font-weight: 800;
+  font-size: 32px;
+  color: #ae67fa;
+  position: absolute;
+  right: 0;
+  margin-right: 2rem;
+}
 .practice {
   width: 100%;
   height: 300px;
@@ -25,7 +32,7 @@
   .AccordionCard {
     width: 100%;
     border-radius: 50px;
-    padding: 15px;
+    padding: 13px;
     margin-bottom: 10px;
   }
 }
@@ -46,10 +53,12 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  text-align: left;
+  align-items: left;
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
-  background: -webkit-linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  background:linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border: none;
@@ -62,16 +71,10 @@
 }
 
 /* Arrow */
-.arrow {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 32px;
-  color: #ae67fa;
-}
 
 @media (max-width: 768px) {
   .arrow {
-    font-size: 24px;
+    font-size: 30px;
   }
 }
 

@@ -1,109 +1,114 @@
 .accordionContainer {
-    width: 100%;
-}
-  .practice {
-    width: 100%;
-    height: 500px;
-  }
-  .button {
-    flex: block;
-    width: 18%;
-    height: 1.5%;
-    flex-direction: row;
-    min-height: 25px;
-    font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 20px;
-    margin-bottom: 10px;
-    line-height: 28px;
-    margin-left: 75rem;
-    background-color: #ff4820;
-    border: 2px solid #ff4820;
-    padding: 0 2rem;
-    margin-top: 20px;
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-    border-radius: 5px;
-  }
-
-  .steps{
-    margin-left: 25px;
-    margin-top: 1%;
-    font-style: bold;
-    font-display: inherit;
-    display: flex;
-    font-size: x-large;
-  }
-.links{
-  text-decoration: underline;
-  color: lightskyblue;
-}
-  
-.imgstyle{
-  height: auto;
   width: 100%;
-  margin-top: 0.5rem;
-  padding: 1rem;
 }
-  /* Body Text */
-  .bodyText {
-    width: 100%;
-    text-align: left;
-    color: #81afdd;
-    font-size: large;
-    margin-top: 5px;
-    margin-right: 5rem;
+.practice {
+  width: 100%;
+  height: 500px;
+}
+.button {
+  flex: block;
+  width: 20%;
+  height: 0.8%;
+  flex-direction: row;
+  min-height: 25px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 10px;
+  line-height: 28px;
+  margin-left: 72rem;
+  background-color: #ff4820;
+  border: 2px solid #ff4820;
+  padding: 0 2rem;
+  margin-top: 20px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+}
+
+.steps{
+  margin-left: 25px;
+  margin-top: 1%;
+  font-style: bold;
+  font-display: inherit;
+  display: flex;
+  font-size: 22px;
+}
+.links{
+text-decoration: underline;
+color: lightskyblue;
+}
+h2{
+color:burlywood;
+font-size: x-large;
+}
+
+.imgstyle{
+height: auto;
+width: 100%;
+margin-top: 0.5rem;
+padding: 1rem;
+}
+/* Body Text */
+.bodyText {
+  width: 100%;
+  text-align: left;
+  color: #81afdd;
+  font-size: medium;
+  font-style: normal;
+  font-family: "Manrope", sans-serif;
+  margin-top: 5px;
+  margin-right: 5rem;
+}
+
+mark 
+{background: rgb(230, 190, 233)!important}
+.ButtonTxt{
+  display: inline;
+  justify-content: space-between;
+  width: 100%;
+  font-style: normal;
+  font-size: 30px;
+  font-family: "Manrope", sans-serif;
+  margin-top: 20px;
+  background-image: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%); 
+  border: none;
+  margin-left: 10px;
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .ButtonTxt {
+    font-size: 32px;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 8px;
   }
-  
-  mark 
-  {background: rgb(230, 190, 233)!important}
-  .ButtonTxt{
+}
+
+@media (max-width: 768px) {
+.bodyText {
+  margin-top: 3px;
+  text-align: left;
+  margin-right: 5rem;
+}
+}
+
+@media (max-width: 768px) {
+  .button {
     display: inline;
-    justify-content: space-between;
-    width: 100%;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 28px;
-    margin-top: 20px;
-    background-image: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%); 
-    border: none;
-    margin-left: 10px;
-    background-size: 100%;
-    background-repeat: repeat;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-  }
-  
-  @media (max-width: 768px) {
-    .ButtonTxt {
-      font-size: 24px;
-      flex-direction: column;
-      margin-top: 10px;
-      margin-left: 8px;
-    }
-  }
-
-  @media (max-width: 768px) {
-  .bodyText {
-    margin-top: 3px;
-    text-align: left;
-    margin-right: 5rem;
+    width: 42%;
+    font-weight: 500;
+    margin-top: 15px;
+    font-size: 20px;
+    line-height: 30px;
+    height: 1%;
+    margin-left: 25rem;
   }
 }
-
-  @media (max-width: 768px) {
-    .button {
-      display: inline;
-      width: 42%;
-      font-weight: 500;
-      margin-top: 25px;
-      font-size: 20px;
-      line-height: 40px;
-      height: 3%;
-      margin-left: 25rem;
-    }
-  }
-  

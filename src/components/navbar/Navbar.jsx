@@ -19,9 +19,6 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </p>
           <p>
-            <a href="#what">What is X-defense?</a>
-          </p>
-          <p>
           <Link to="/labs">Labs</Link>
           </p>
         </div>
@@ -53,9 +50,6 @@ const Navbar = () => {
             <div className="gp__navbar-menu_container-links">
               <p>
                 <a href="#home">Home</a>
-              </p>
-              <p>
-                <a href="#what">What is GPT3?</a>
               </p>
               <p>
                 <a href="#Labs">Labs</a>

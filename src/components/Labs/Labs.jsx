@@ -6,8 +6,6 @@ const Labs = ({ img, title }) => {
   const navigate = useNavigate();
   
   const navigateToContent = (title) => {
-    const currentTime = new Date().toLocaleTimeString();
-    localStorage.setItem("labtime",currentTime);
     navigate(`/content/${(title.title)}`);
 
   };
