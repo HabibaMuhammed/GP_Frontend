@@ -64,5 +64,5 @@ const Labs = ({ img, title }) => {
       </div>
     );
   }
-};
+}};
 export default Labs;
