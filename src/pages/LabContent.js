@@ -18,17 +18,18 @@ export default function LabContent() {
         const response = await axios.post("http://localhost:5001/api/labs/Fetchlab", { name: title });
         setData(response.data);
         console.log("Fetched data:", response.data);
-        setIsLoading(false); 
+        setIsLoading(false); // Update loading state when data is fetched successfully
       } catch (error) {
         console.error(error);
-        setIsLoading(false); 
+        setIsLoading(false); // Update loading state even if an error occurs
       }
     };
 
     fetchData();
   }, []);
 
-  
+  console.log("Title:", title); // Check the decoded title value in the console
+  console.log("Data:", data); // Check the structure and values of the fetched data
 
   return (
     <>
