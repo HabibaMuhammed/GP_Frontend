@@ -17,9 +17,9 @@ export default function UserProfileSideBar({ user }) {
   return (
     <div className="UserProfileSideBarContainer">
       <div className="UserProfileSideBarPhotos">
-        <img src={User} className="UserProfileSideBarImg" />
+        <img src={User} alt="user" className="UserProfileSideBarImg" />
       <button class="image-button">
-        <img src={Edit} alt="Button Image" />
+        <img src={Edit} alt="Button" />
       </button>
       </div>
 

@@ -9,7 +9,7 @@ export default function UserProfile() {
 
   return (
     <>
-    {user && <div style={{ display: "flex", flexDirection: "row" }}>
+    {user && <div style={{ display: "flex", flexDirection: "row",height:"100vh" }}>
       <UserProfileSideBar user={user} />
       <UserProfileData />
     </div>}

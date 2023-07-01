@@ -1,9 +1,10 @@
 .img {
-  width: 15rem;
-  height: 15rem;
+  width: 10rem;
+  height: 10rem;
 }
 .h {
   width: 382px;
+  margin-left: 30px;
   height: 89px;
   font-family: "Manrope";
   font-style: normal;
@@ -15,10 +16,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border: none;
-}
-.img {
-  width: 15rem;
-  height: 15rem;
 }
 .h {
   width: 382px;

@@ -3,14 +3,13 @@ import "./LabExplanation.css";
 import { LabAccordion, VerticalLine } from "../../components";
 import LabStats from "../LabStats/LabStats";
 
-import Toast from "../../components/Toast/Toast";
 
-export default function LabExplanation({headers,content}) {
+export default function LabExplanation({headers,content,id,container}) {
   console.log(headers);
   return (
     <div className="explanationContainer">
       <div className="accord">
-        <LabAccordion headers={headers} content={content} />
+        <LabAccordion headers={headers} content={content} id={id} container={container} />
         <VerticalLine />
       </div>
       <div className="rest">

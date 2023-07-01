@@ -1,38 +1,106 @@
-import React from "react";
-import HeatMap from "react-heatmap-grid";
+import React, { useState, useEffect } from "react";
+import HeatMap from "@uiw/react-heat-map";
+import axios from "axios";
 
-const xLabels = new Array(53).fill(0).map((_, i) => `${i}`);
+const convertToObjectArray = (data) => {
+  const result = [];
 
-// Display labels for every 30th cell (month)
-const xLabelsVisibility = new Array(53)
-  .fill(false)
-  .map((_, i) => (i % 2 === 0 ? true : false));
+  for (const date in data) {
+    if (data.hasOwnProperty(date)) {
+      console.log(data[date]);
+      if (data[date] === 99 || data[date] === 199 || data[date] === 1000) {
+        result.push({ date: formatDate(date), count: data[date] });
+      } else {
+        if (!data[date]) {
+          data[date] = 99;
+        } else if (data[date] >= 1 && data[date] < 3) {
+          data[date] = 199;
+        } else if (data[date] >= 3) {
+          data[date] = 1000;
+        }
+        result.push({ date: formatDate(date), count: data[date] });
+      }
+    }
+  }
 
-const yLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-const data = new Array(yLabels.length)
-  .fill(0)
-  .map(() =>
-    new Array(xLabels.length).fill(0).map(() => Math.floor(Math.random() * 100))
-  );
-const cellSize = 13; // Adjust the size of each cell here
+  return result;
+};
 
-export default function UserProfileHeatmap() {
+const formatDate = (dateString) => {
+  const [weekDay, month, day] = dateString.split("-");
+  const currentYear = new Date().getFullYear();
+  return `${currentYear}/${monthMap[month]}/${day}`;
+};
+
+const monthMap = {
+  Jan: "01",
+  Feb: "02",
+  Mar: "03",
+  Apr: "04",
+  May: "05",
+  Jun: "06",
+  Jul: "07",
+  Aug: "08",
+  Sep: "09",
+  Oct: "10",
+  Nov: "11",
+  Dec: "12",
+};
+
+const UserProfileHeatmap = () => {
+  const [performance, setPerformance] = useState([{}]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = JSON.parse(localStorage.getItem("token"));
+        const response = await axios.get(
+          "http://localhost:5001/api/user/Performance",
+          {
+            headers: {
+              Authorization: `${token}`,
+            },
+          }
+        );
+        const data = response.data;
+        setPerformance(data);
+      } catch (error) {
+        // Handle error here
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const value = convertToObjectArray(performance);
+
+  console.log(value);
+
   return (
-    <div>
+    <div
+      style={{
+        width: "100%",
+        maxWidth: "700px",
+        overflowX: "auto",
+      }}
+    >
       <HeatMap
-        xLabels={["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]}
-        yLabels={yLabels}
-        xLabelsLocation={"bottom"}
-        xLabelsVisibility={xLabelsVisibility}
-        data={data}
-        squares
-        cellStyle={(background, value, min, max, data, x, y) => ({
-          background: `rgba(174,103,250, ${1 - (max - value) / (max - min)})`,
-          fontSize: "5px",
-          width: `${cellSize}px`, // Set the width of each cell
-          height: `${cellSize}px`, // Set the height of each cell
-        })}
+        value={value}
+        width={700}
+        style={{ color: "#e88d15", fontFamily: "Manrope" }}
+        startDate={new Date("2023/01/01")}
+        panelColors={{
+          0: "#001440",
+          100: "#AF7AC5",
+          200: "#884EA0",
+          1000: "#702963",
+        }}
+        legendCellSize="0"
+        onClick={null}
       />
     </div>
   );
-}
+};
+
+export default UserProfileHeatmap;

@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 
 export default function Performance() {
-  const totalNumberOfLabs = 12;
+  const totalNumberOfLabs = 18;
   const [count, setCount] = useState(0);
   // remove this after merging
   const token = JSON.parse(localStorage.getItem("token"));
@@ -25,7 +25,6 @@ export default function Performance() {
   let resInDegree = Math.ceil((result * 180) / 100);
 
   let resInNegDegree = resInDegree - 180;
-  console.log(resInNegDegree);
   return (
     <div className="PerformanceContainer">
       <h2 className="per">Performance</h2>
