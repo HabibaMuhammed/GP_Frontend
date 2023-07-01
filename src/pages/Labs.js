@@ -3,7 +3,7 @@ import { Labcard } from "../containers";
 import { NavbarLab, Navbar } from "../components";
 import { UserContext } from "../App";
 import SideBar from "../components/SideBar/SideBar";
-import UserBar from "../containers/UserBar/UserBar";
+
 
 export default function Labs() {
   const user = useContext(UserContext);
@@ -14,7 +14,7 @@ export default function Labs() {
       {user && <NavbarLab user={user} />}
       <Labcard />
       {user && <SideBar />}
-      {/* <UserBar/> */}
+    
     </>
   );
 }

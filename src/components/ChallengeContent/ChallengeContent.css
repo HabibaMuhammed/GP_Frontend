@@ -1,0 +1,143 @@
+.ChallengeContentContainer {
+  background-color: #042c54;
+  border-radius: 30px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 90%;
+  height: 250%;
+}
+.ChallengeDisplay {
+  display: flex;
+  flex-direction: column;
+}
+.ChallengeContentInputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+}
+.ChallengeContentHeader {
+  margin-top: 18px;
+  padding: 10px 13px;
+  height: 30px;
+  border: none;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--gray-5, #ededf0);
+  flex-shrink: 0;
+}
+.ChallengeContent {
+  background: #ededf0;
+  border-radius: 8px;
+  border: none;
+  margin-top: 5px;
+  max-width: 100%;
+  display: inline-flex;
+  height: 60px;
+  overflow-y: scroll;
+  padding: 5px 13px;
+  overflow-y: visible;
+  align-items: center;
+  gap: 14px;
+}
+
+.ChallengeContentTitle {
+  font-family: "Manrope";
+  font-style: normal;
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 30px;
+  margin-left: -25px;
+  background: -webkit-linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.ChallengeContentBtn {
+  padding: 0.5rem 1rem;
+  width: 13.5rem;
+  background: linear-gradient(180deg, #fa6770 0%, #ff4820 100%);
+  box-shadow: 0px 4px 4px 0px rgba(249, 247, 243, 0.25) inset,
+    0px -4px 4px 0px rgba(0, 0, 0, 0.25) inset,
+    0px 2px 4px 0px rgba(57, 114, 205, 0.2);
+  color: #fff;
+  font-family: var(--font-family);
+  font-weight: 700;
+  align-self: self-end;
+  font-size: 22px;
+  line-height: 25px;
+  border: none;
+  outline: #ff4820;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  margin-top: 8rem;
+}
+
+.BrowsecontentBtn {
+  border-radius: 8px;
+  background: linear-gradient(180deg, #fa6770 0%, #ff4820 100%);
+  box-shadow: 0px 4px 4px 0px rgba(249, 247, 243, 0.25) inset,
+    0px -4px 4px 0px rgba(0, 0, 0, 0.25) inset,
+    0px 2px 4px 0px rgba(57, 114, 205, 0.2);
+  color: #fff;
+  font-family: var(--font-family);
+  font-weight: 900;
+  align-self: center;
+  font-size: 25px;
+  line-height: 15px;
+  cursor: pointer;
+  border: none;
+  outline: #ff4820;
+  border-radius: 5px;
+  margin-top: -79px;
+  display: flex;
+  width: 200px;
+  height: 50px;
+  padding: 8px 16px;
+  margin-left: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.ChallengecontentImg {
+  margin-top: 35px;
+  width: 85%;
+  height: 40%;
+  position: flex;
+  margin-left: 70px;
+  margin-bottom: auto;
+}
+
+@media (max-width: 768px) {
+  .ChallengecontentImg {
+    width: 100%;
+    margin-top: 45px;
+    margin-left: -1px;
+  }
+}
+
+@media (max-width: 768px) {
+  .BrowsecontentBtn {
+    margin-top: -82px;
+    margin-left: 15px;
+    font-size: 21px;
+    font-weight: 450;
+    line-height: 15px;
+    width: 37%;
+    margin-bottom: -5rem;
+    height: 35px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .ChallengeContentBtn {
+    margin-top: 13rem;
+    font-size: 17px;
+    font-weight: 570;
+    height: 40px;
+    line-height: 15px;
+    width: 40%;
+  }
+}
