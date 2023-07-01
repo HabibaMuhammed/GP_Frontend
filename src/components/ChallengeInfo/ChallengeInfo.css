@@ -1,0 +1,99 @@
+.ChallengeInfoContainer{
+    background-color: #042C54;
+    border-radius: 30px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 90%;
+    height: 110%;
+}
+.ChallengeDisplay{
+    display: flex;
+    flex-direction: column;
+}
+.ChallengeInfoInputContainer{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+.ChallengeInfoInput
+{
+    border-radius: 20px;
+    margin-top: 30px;
+    padding: 10px;
+}
+.ChallengeInfoTitle{
+    font-family: "Manrope";
+    font-style: normal;
+    margin-top: 15px;
+    font-weight: 800;
+    font-size: 32px;
+    background: -webkit-linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .ChallengeInfoBtn{
+    padding: 0.5rem 1rem;
+    width: 10rem;
+    background: linear-gradient(180deg, #FA6770 0%, #FF4820 100%);
+    box-shadow: 0px 4px 4px 0px rgba(249, 247, 243, 0.25) inset, 0px -4px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 2px 4px 0px rgba(57, 114, 205, 0.20);
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: 600;
+    align-self: self-end;
+    font-size: 16px;
+    line-height: 25px;
+    border: none;
+    outline:  #ff4820;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 6rem;    
+  }
+
+  .BrowseBtn{
+    padding: 0.5rem 0.5rem;
+    width: 9rem;
+    height:3rem;
+    background: linear-gradient(180deg, #FA6770 0%, #FF4820 100%);
+    box-shadow: 0px 4px 4px 0px rgba(249, 247, 243, 0.25) inset, 0px -4px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 2px 4px 0px rgba(57, 114, 205, 0.20);
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: 600;
+    align-self:center ;
+    font-size: 16px;
+    line-height: 13px;
+    border: #ff4820;
+    outline:  #ff4820;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: -85px;    
+  }
+.ChallengeImg{
+    margin-top: 35px;
+    width: 100%;
+    position: flex;
+    margin-bottom: auto;
+}
+
+@media (max-width: 768px) {
+    .ChallengeImg{
+        width: 140%;
+        margin-left: -6rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+  .BrowseBtn {
+    margin-top: -55px;
+    margin-left: -5px;
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+    .ChallengeInfoBtn {
+      margin-top: 12rem;
+    }
+  }

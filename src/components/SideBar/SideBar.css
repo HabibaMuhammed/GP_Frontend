@@ -1,10 +1,23 @@
 .sideBar{
-    position: absolute;
-    width: 100px;
-    height: 1710px;
+    position: fixed;
+    width: 200px;
+    height: 100vh;
+    z-index: 15;
     left: 0px;
-    top: 5px;
-    display: 2;
-    background-color: linear-gradient(359.7deg, rgba(7, 45, 86, 0.8) 20%, rgba(23, 127, 239, 0) 80%);
+    top: 0px;
     border-radius: 36px 0px 0px 36px;
     }
+
+    @media (max-width:768px){
+        .sideBar{
+
+            width:60%;
+    }
+}
+
+@media (max-width:576px){
+    .sideBar{
+
+        width:100%;
+}
+}

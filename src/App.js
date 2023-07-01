@@ -8,17 +8,19 @@ import "./App.css";
 import Labs from "./pages/Labs";
 import LabContent from "./pages/LabContent";
 import PageNotFound from "./components/error/Error";
-import LearningEnv from "./pages/LearningEnv";import UserProfile from "./pages/UserProfile";
+import LearningEnv from "./pages/LearningEnv";
+import UserProfile from "./pages/UserProfile";
 import Settings from "./pages/Settings";
 import Forget from "./pages/Forget";
+import ChallengeContent from "./pages/ChallengeContent";
 import ResetPassword from "./pages/ResetPassword";
 import Try from "./pages/Try";
 import Otp from "./pages/Otp";
+import AdminPage from "./pages/AdminPage";
 
 export const UserContext = createContext(null);
 export const LogoutContext = createContext(() => {});
 
-             
 const App = () => {
   const [user, setUser] = useState(null);
 
@@ -58,15 +60,16 @@ const App = () => {
               <Route path="/signup" element={<Signup />} />
               <Route path="/labs" element={<Labs />} />
               <Route path="/profile" element={<UserProfile />} />
+              <Route path="/Admin" element={<AdminPage />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/forget" element={<Forget />} />
               <Route path="/reset" element={<ResetPassword />} />
               <Route path="/try" element={<Try />} />
               <Route path="/otp" element={<Otp />} />
+              <Route path="/ChallengeContent" element={<ChallengeContent />} />
+              <Route path="/learningcontent" element={<LearningEnv />} />
+              <Route path="*" Component={PageNotFound} />
 
-              <Route path="/learningcontent" element={<LearningEnv />}/>
-             <Route path="*" Component={PageNotFound} />
-             
               <Route path="/content/:title" element={<LabContent />} />
             </Routes>
           </BrowserRouter>

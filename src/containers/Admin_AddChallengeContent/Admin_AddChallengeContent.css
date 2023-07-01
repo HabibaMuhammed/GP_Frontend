@@ -1,0 +1,8 @@
+.Admin_ChallengeContentContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    height: 100%;
+    overflow-y: scroll;
+}

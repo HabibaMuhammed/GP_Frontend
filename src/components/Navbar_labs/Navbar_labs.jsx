@@ -20,7 +20,7 @@ const Navbar_labs = ({ user }) => {
       <div className="gp__navbar-links">
         <div className="gp__navbar-links_logo">
           <Link to="/">
-            <h1>X-Defense</h1>
+            <h1 className="head" style={{ marginLeft: 10}}>X-Defense</h1>
           </Link>
         </div>
         <div className="gp__navbar-links_container">
@@ -29,19 +29,13 @@ const Navbar_labs = ({ user }) => {
           </p>
         </div>
       </div>
-      <div className="gp__navbar-user gp__navbar-links_container">
+      <div className="gp__navbar-user">
         <img src={User} alt="user" />
-        <p>
-            <Link to="/profile">{user}</Link>
-          </p>
+        <p style={{ marginTop: 15}}>{user}</p>
       </div>
       <button className="logoutBtn" type="button" onClick={onLogoutClick}>
         Log Out
       </button>
-
-      <div className="icons">
-        <img src={bell} alt="nofication" />
-      </div>
     </div>
   );
 };
