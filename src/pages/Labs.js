@@ -4,7 +4,6 @@ import { NavbarLab, Navbar } from "../components";
 import { UserContext } from "../App";
 import SideBar from "../components/SideBar/SideBar";
 
-
 export default function Labs() {
   const user = useContext(UserContext);
 
