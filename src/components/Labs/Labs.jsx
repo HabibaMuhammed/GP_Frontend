@@ -8,23 +8,10 @@ const Labs = ({ img, title }) => {
   const navigate = useNavigate();
   const user = useContext (UserContext);
   
-  const navigateToContent = (title) => {
-    console.log(user);
-    if(!user)
-    {
 
-      navigate('/login');
-    }
-    else{
-
-      const currentTime = new Date().toLocaleTimeString();
-      localStorage.setItem("labtime",currentTime);
-      navigate(`/content/${(title.title)}`);
-    }
 
 
   const navigateToContent = (title) => {
-    console.log(user);
     if (!user) {
       navigate("/login");
     } else {
@@ -64,5 +51,5 @@ const Labs = ({ img, title }) => {
       </div>
     );
   }
-}};
+};
 export default Labs;
