@@ -1,9 +1,10 @@
 import React, { useRef,useState } from "react";
 import axios from "axios";
+import jwtdecode from "jwt-decode"
 import * as Yup from 'yup';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useForm} from 'react-hook-form';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 import { Slide, ToastContainer,toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -48,14 +49,21 @@ const LoginForm = ({onLogin}) => {
         localStorage.setItem("authenticated", true);}
       localStorage.clear();
       onLogin(data.name); // call the callback function with the user data
-
       localStorage.setItem("token", JSON.stringify(data.token));
+      let decodedtoken=jwtdecode(data.token);
+      if(decodedtoken.isAdmin==true)
+     { toast.success("Logged in Successfully !",{transition:Slide})
+      setTimeout(() => {
+        navigate('/Admin');
+      }, 1000);
+    }
+    else{
       toast.success("Logged in Successfully !",{transition:Slide})
       setTimeout(() => {
         navigate('/labs');
       }, 1000);
       
-    }catch(error){
+    }}catch(error){
       console.log(error);
       toast.error("Invalid E-mail or Password ! \n Please try a valid Email or Password",{transition:Slide})
       setTimeout(() => {
@@ -97,9 +105,9 @@ const LoginForm = ({onLogin}) => {
         <ToastContainer/>
       </form>
       <div className="link_container">
-        <Link to="/forget" className="small">
+        <a href="" className="small">
           Forgot Password?
-        </Link>
+        </a>
       </div>
       <div className="link_container">
         <a href="" className="small" onClick={navigatesignup}>

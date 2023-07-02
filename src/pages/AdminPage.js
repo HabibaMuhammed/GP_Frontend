@@ -3,17 +3,20 @@ import Admin_AddNewChallenge from "../containers/Admin_AddNewChallenge/Admin_Add
 import AdminProfileSideBar from "../containers/AdminProfileSideBar/AdminProfileSideBar";
 import { UserContext } from "../App";
 import Error404 from "../components/error/Error";
-
+import jwtdecode from "jwt-decode";
 export default function AdminProfile() {
   const user = useContext(UserContext);
-
+  const token = JSON.parse(localStorage.getItem("token"));
+  const decodedtoken = jwtdecode(token);
+  let isAdmin = decodedtoken.isAdmin;
   return (
     <>
-    <div style={{ display: "flex", flexDirection: "row",height:"100vh" }}>
-      <AdminProfileSideBar user={user} />
-      <Admin_AddNewChallenge/>
-    </div>
-    
+      {!isAdmin && !user && <Error404 />}
+      {!isAdmin && user && <Error404 />}
+      <div style={{ display: "flex", flexDirection: "row", height: "100vh" }}>
+        {isAdmin && <AdminProfileSideBar user={user} />}
+        {isAdmin && <Admin_AddNewChallenge />}
+      </div>
     </>
   );
 }

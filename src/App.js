@@ -28,6 +28,7 @@ const App = () => {
     async function fetchData() {
       try {
         const token = JSON.parse(localStorage.getItem("token"));
+        
         const config = {
           headers: { Authorization: ` ${token}` },
         };
