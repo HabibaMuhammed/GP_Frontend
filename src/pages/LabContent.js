@@ -43,6 +43,7 @@ export default function LabContent() {
             content={data.labs.headers_content}
             id={data.labs._id}
             container={data.labs.Containers}
+            formLink={data.labs.formLink}
           />
         </>
       )}
