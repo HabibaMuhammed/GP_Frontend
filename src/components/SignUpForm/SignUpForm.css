@@ -134,3 +134,18 @@
     flex-direction: row-reverse;
   }
 }
+@media screen and (max-width: 965px) {
+  .img2 {
+    flex-direction: column-reverse;
+    margin-left: 8rem;
+    padding-right: 8rem;
+    margin-top: 1rem ;
+  }
+  .quote{
+    flex-direction: column-reverse;
+    margin-left: 8rem;
+    padding-right: 8rem;
+    margin-top: 5rem ;
+  }
+  
+}

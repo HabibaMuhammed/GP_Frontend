@@ -27,8 +27,7 @@ export default function LabAccordion() {
             <br/>
             <h4 style={{marginLeft: 40}}>1. Docker-Desktop:&nbsp; <a className="links" href="https://www.docker.com/products/docker-desktop/">https://www.docker.com/products/docker-desktop/</a></h4>
             <h4 style={{marginLeft: 40}}>2. Visual Studio Code: &nbsp; <a className="links" href="https://code.visualstudio.com/download"> https://code.visualstudio.com/download </a></h4>
-            <h4 style={{marginLeft: 40}}>3. Google Chrome: &nbsp; <a className="links" href="https://www.google.com/intl/eg/chrome/"> https://www.google.com/intl/eg/chrome/</a></h4>
-            <h4 style={{marginLeft: 40}}>4. Packet Tracer: &nbsp; <a className="links" href="https://skillsforall.com/resources/lab-downloads?Lang=en-US"> https://skillsforall.com/resources/lab-downloads?Lang=en-US</a></h4>
+            <h4 style={{marginLeft: 40}}>3. Packet Tracer: &nbsp; <a className="links" href="https://skillsforall.com/resources/lab-downloads?Lang=en-US"> https://skillsforall.com/resources/lab-downloads?Lang=en-US</a></h4>
             <br/>
 
         <h1 className="try ButtonTxt">2. How to Access & Solve the Lab</h1>

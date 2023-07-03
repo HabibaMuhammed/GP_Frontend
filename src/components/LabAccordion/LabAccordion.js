@@ -21,14 +21,14 @@ function CustomToggle({ children, eventKey }) {
   );
 }
 
-export default function LabAccordion({ headers, content ,id,container}) {
+export default function LabAccordion({ headers, content ,id,container,formLink}) {
   return (
     <Accordion
       defaultActiveKey={["0", "5"]}
       className="accordionContainer"
       alwaysOpen
     >
-      <Card className="AccordionCard">
+    {headers[0] &&  <Card className="AccordionCard">
         <Card.Header className="try ButtonTxt">
           <CustomToggle eventKey="0">
             {headers[0]}
@@ -42,8 +42,8 @@ export default function LabAccordion({ headers, content ,id,container}) {
             <ConvertTextToHtmlComponent htmlString={content[0]} />
           </Card.Body>
         </Accordion.Collapse>
-      </Card>
-      <Card className="AccordionCard">
+      </Card> }
+     {headers[1] && <Card className="AccordionCard">
         <Card.Header className="try ButtonTxt">
           <CustomToggle eventKey="1">
             {headers[1]}
@@ -57,8 +57,8 @@ export default function LabAccordion({ headers, content ,id,container}) {
             <ConvertTextToHtmlComponent htmlString={content[1]} />
           </Card.Body>
         </Accordion.Collapse>
-      </Card>
-      <Card className="AccordionCard">
+      </Card> }
+      {headers[2] && <Card className="AccordionCard">
         <Card.Header className="try ButtonTxt">
           <CustomToggle eventKey="2">
             {headers[2]}
@@ -72,8 +72,8 @@ export default function LabAccordion({ headers, content ,id,container}) {
             <ConvertTextToHtmlComponent htmlString={content[2]} />
           </Card.Body>
         </Accordion.Collapse>
-      </Card>
-      <Card className="AccordionCard">
+      </Card> }
+      {headers[3] && <Card className="AccordionCard">
         <Card.Header className="try ButtonTxt">
           <CustomToggle eventKey="3">
             {headers[3]}
@@ -87,7 +87,8 @@ export default function LabAccordion({ headers, content ,id,container}) {
             <ConvertTextToHtmlComponent htmlString={content[3]} />
           </Card.Body>
         </Accordion.Collapse>
-      </Card>
+      </Card> }
+      { headers[4] &&
       <Card className="AccordionCard">
         <Card.Header className="try ButtonTxt">
           <CustomToggle eventKey="4">
@@ -105,7 +106,7 @@ export default function LabAccordion({ headers, content ,id,container}) {
             </SyntaxHighlighter>
           </Card.Body>
         </Accordion.Collapse>
-      </Card>
+      </Card> }
       <Card className="AccordionCard">
         <Card.Header className="try ButtonTxt">
           <CustomToggle eventKey="5">
@@ -117,7 +118,7 @@ export default function LabAccordion({ headers, content ,id,container}) {
         </Card.Header>
         <Accordion.Collapse eventKey="5" className="practice">
           <Card.Body>
-            <DownloadLab container={container}/>
+            <DownloadLab container={container} formLink={formLink}/>
             <FlagInput id={id}/>
           </Card.Body>
         </Accordion.Collapse>

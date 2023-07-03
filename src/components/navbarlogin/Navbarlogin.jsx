@@ -36,9 +36,9 @@ const Navbarlogin = ({ user }) => {
       </div>
       <div className="gp__navbar-user">
         <img src={User} alt="user" />
-        <Link to="/profile">
-          <p>{user}</p>
-        </Link>
+        {/* <p>
+            <Link to="/profile">{user}</Link>
+          </p> */}
       </div>
 
       <button className="logoutBtn" type="button" onClick={onLogoutClick}>
