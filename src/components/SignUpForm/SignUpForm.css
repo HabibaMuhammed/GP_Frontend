@@ -1,19 +1,17 @@
 .img2{
   width: 550px;
-  height: 100%;
-  margin-top: -4rem ;
+  display: inline;
+  margin-top: 2rem ;
   margin-left: 55rem;
 }
 .quote{
   width: 550px;
-  height: 100%;
   color: azure;
   font-family: "Inter";
   font-style: "Regular";
   font-size: 35px;
   justify-content: "center";
   display: flex;
-  margin-bottom: 5rem;
   text-align: "center";
   margin-top: -45rem ;
   margin-left: 50rem;
@@ -92,7 +90,7 @@
   margin: 0;
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 768px) {
   .inputs_container input {
     width: 100%;
   }
@@ -106,6 +104,20 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .img2 {
+    flex-direction: column-reverse;
+    margin-left: 5rem;
+    margin-top: 1rem ;
+  }
+  .quote{
+    flex-direction: column-reverse;
+    margin-left: 5rem;
+    margin-top: 5rem ;
+  }
+  
+}
+
 @media only screen and (max-height: 670px) {
   .subtitle {
     margin-bottom: 2rem;
@@ -114,4 +126,26 @@
   .small {
     margin-bottom: 3rem;
   }
+  .img2 {
+    flex-direction: row-reverse;
+    
+  }
+  .quote{
+    flex-direction: row-reverse;
+  }
+}
+@media screen and (max-width: 965px) {
+  .img2 {
+    flex-direction: column-reverse;
+    margin-left: 8rem;
+    padding-right: 8rem;
+    margin-top: 1rem ;
+  }
+  .quote{
+    flex-direction: column-reverse;
+    margin-left: 8rem;
+    padding-right: 8rem;
+    margin-top: 5rem ;
+  }
+  
 }

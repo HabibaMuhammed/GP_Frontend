@@ -1,17 +1,54 @@
 import React, { useState } from "react";
 import "./ChangePassword.css";
-export default function ChangePassword() {
-  const [newPassword, setNewPassword] = useState("");
-  const [confirmNewPassword, setConfirmNewPassword] = useState("");
+import axios from "axios";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
-  const handleClick = () => {
-    // Perform additional logic here
+import { Slide, ToastContainer, toast } from "react-toastify";
+
+export default function ChangePassword() {
+  const [email, setEmail] = useState("");
+
+  const [newPassword, setNewPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const reqURL = "http://localhost:5001/api/user/forgetPassword";
+    const data = {
+      email: email,
+      password: newPassword
+    };
+    console.log(data);
+
+    if (!email || !newPassword ){
+      toast.error("Missing Fields",{transition:Slide})
+      return;
+    }
+
+    axios
+      .patch(reqURL, data)
+      .then((response) => {
+        if (response.data.message === "Password updated") {
+          toast.success("Updated Successfully !",{transition:Slide})
+          setTimeout(() => {
+            navigate("/login");
+          }, 10000); 
+        }
+        else {
+          toast.error("In-valid account",{transition:Slide})
+        }
+      })
+      .catch((error) => {
+      });
+    setTimeout(() => {
+    }, 3000);
   };
   const handleNewPasswordChange = (event) => {
     setNewPassword(event.target.value);
   };
-  const handleConfirmNewPassword = (event) => {
-    setConfirmNewPassword(event.target.value);
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
   };
 
   return (
@@ -19,6 +56,13 @@ export default function ChangePassword() {
       <div className="ChangePasswordInputContainer">
         <h2 className="ChangePasswordTitle">Reset Password:</h2>
         <div className="PersonalDisplay">
+        <input
+            className="ChangePasswordInput"
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={handleEmailChange}
+          />
           <input
             className="ChangePasswordInput"
             type="password"
@@ -26,16 +70,10 @@ export default function ChangePassword() {
             value={newPassword}
             onChange={handleNewPasswordChange}
           />
-           <input
-            className="ChangePasswordInput"
-            type="password"
-            placeholder="Confirm New Password"
-            value={confirmNewPassword}
-            onChange={handleConfirmNewPassword}
-          />
-          <button onClick={handleClick} className="ChangePasswordBtn">
+          <button onClick={handleSubmit} className="ChangePasswordBtn">
            Update
           </button>
+          <ToastContainer/>
         </div>
       </div>
     </div>

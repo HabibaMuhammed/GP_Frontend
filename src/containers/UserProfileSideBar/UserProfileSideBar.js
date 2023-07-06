@@ -1,28 +1,36 @@
-import React from "react";
+import React, {useContext} from "react";
 import "./UserProfileSideBar.css";
 import User from "../../assets/user.png";
 import Edit from "../../assets/Vector.png";
+import { LogoutContext } from "../../App";
 
-import { Link, NavLink } from "react-router-dom";
-export default function UserProfileSideBar({ name }) {
+import { Link,useNavigate  } from "react-router-dom";
+export default function UserProfileSideBar({ user }) {
+  const handleLogout = useContext(LogoutContext);
+  const navigate = useNavigate();
+
+  const onLogoutClick = () => {
+    handleLogout();
+    navigate("/");
+  };
+
   return (
     <div className="UserProfileSideBarContainer">
       <div className="UserProfileSideBarPhotos">
-        <img src={User} className="UserProfileSideBarImg" />
+        <img src={User} alt="user" className="UserProfileSideBarImg" />
       <button class="image-button">
-        <img src={Edit} alt="Button Image" />
+        <img src={Edit} alt="Button" />
       </button>
       </div>
-      
 
-      <h2 className="UserProfileSideBarName">{name}</h2>
+      <h2 className="UserProfileSideBarName">{user}</h2>
       <div>
         <ul className="UserProfileSideBar">
           <li >
             <Link
               exact
               className="UserProfileSideBarLi"
-              to="/"
+              to="/profile"
             >
               My Profile
             </Link>
@@ -31,7 +39,7 @@ export default function UserProfileSideBar({ name }) {
           <Link
               exact
               className="UserProfileSideBarLi"
-              to="/"
+              to="/labs"
             >
               Labs
             </Link>
@@ -41,7 +49,7 @@ export default function UserProfileSideBar({ name }) {
           <Link
               exact
               className="UserProfileSideBarLi"
-              to="/"
+              to="/settings"
             >
               Settings
             </Link>
@@ -52,6 +60,7 @@ export default function UserProfileSideBar({ name }) {
               exact
               className="UserProfileSideBarLi"
               to="/"
+              onClick={onLogoutClick}
             >
               Logout
             </Link>

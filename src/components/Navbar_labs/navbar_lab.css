@@ -48,7 +48,6 @@
   font-size: 16px;
   line-height: 30px;
   text-transform: capitalize;
-
   margin: 0 1rem;
   margin-top: 8px;
   cursor: pointer;
@@ -60,9 +59,12 @@
 .icons img {
   width: 70%;
 }
-@media screen and (max-width: 700px) {
+@media only screen and (width: 700px) {
   .gp__navbar {
     padding: 2rem 4rem;
+  }
+  .head{
+    margin-left: 100px;
   }
 }
 

@@ -4,51 +4,86 @@
     rgba(7, 45, 86, 0.8) 0%,
     rgba(23, 127, 239, 0) 100%
   );
-  flex-shrink: 0;
   width: 18%;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   padding: 20px;
+  height: 100vh;
 }
-.UserProfileSideBarPhotos{
+
+.UserProfileSideBarPhotos {
   width: 90%;
   margin: 0 auto;
-  margin-top: 30px;
-  margin-left: 30px;
+  /* margin-top: 30px;
+  margin-left: 30px; */
 }
+
 .image-button {
   border: none;
   background-color: transparent;
   padding: 0;
   cursor: pointer;
 }
-.UserProfileSideBar{
-    margin-top: 90px;
-    list-style: none;
-    font-family: Manrope;
-    font-weight: 800;
+
+.UserProfileSideBar {
+  margin-top: 90px;
+  list-style: none;
+  font-family: Manrope;
+  font-weight: 800;
 }
+
 .image-button img {
   width: 3rem; /* Adjust the width and height as needed */
 }
 
 .UserProfileSideBarImg {
-  width: 8rem;
+  width: 100%;
+  height: auto;
 }
+
 .activeLink {
   color: black;
 }
+
 .UserProfileSideBarName {
   color: white;
   font-family: Manrope;
   font-size: 16px;
   margin-top: 20px;
+  text-align: center;
   font-weight: 800;
 }
-.UserProfileSideBarLi{
-    font-size: 20px;
-    color: rgba(255, 255, 255, 0.43)
+
+.UserProfileSideBarLi {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.43);
 }
+
 .UserProfileSideBarLi:hover {
   color: white;
 }
 
+/* Media Queries */
+@media screen and (max-width: 768px) {
+
+  .image-button img {
+    width: 2rem; /* Adjust the width and height as needed */
+  }
+  .UserProfileSideBarLi {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  /* .UserProfileSideBarPhotos {
+    margin-top: 10px;
+    margin-left: 10px;
+  } */
+
+
+  .UserProfileSideBarLi {
+    font-size: 14px;
+  }
+}

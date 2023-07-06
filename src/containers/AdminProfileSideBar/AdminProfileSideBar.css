@@ -1,0 +1,80 @@
+.AdminProfileSideBarContainer {
+    background: linear-gradient(
+      315deg,
+      rgba(7, 45, 86, 0.8) 0%,
+      rgba(23, 127, 239, 0) 100%
+    );
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100vh;
+    left: 0;
+  }
+  
+  .AdminProfileSideBarPhotos {
+    width: 90%;
+    margin: 0 auto;
+    /* margin-top: 30px;
+    margin-left: 30px; */
+  }
+
+  .AdminProfileSideBar {
+    margin-top: 90px;
+    list-style: none;
+    font-family: Manrope;
+    font-weight: 800;
+  }
+  
+  .AdminProfileSideBarImg {
+    width: 100%;
+    height: auto;
+  }
+  
+  .activeLink {
+    color: black;
+  }
+  
+  .AdminProfileSideBarName {
+    color: white;
+    font-family: Manrope;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 800;
+  }
+  
+  .AdminProfileSideBarLi {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.43);
+  }
+  
+  .AdminProfileSideBarLi:hover {
+    color: white;
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 768px) {
+  
+    .image-button img {
+      width: 2rem; /* Adjust the width and height as needed */
+    }
+    .AdminProfileSideBarLi {
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+  
+    /* .UserProfileSideBarPhotos {
+      margin-top: 10px;
+      margin-left: 10px;
+    } */
+  
+  
+    .AdminProfileSideBarLi {
+      font-size: 14px;
+    }
+  }
+  

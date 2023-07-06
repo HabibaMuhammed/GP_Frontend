@@ -19,10 +19,7 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </p>
           <p>
-            <a href="#what">What is X-defense?</a>
-          </p>
-          <p>
-          <Link to="/labs">Labs</Link>
+            <Link to="/labs">Labs</Link>
           </p>
         </div>
       </div>
@@ -51,21 +48,20 @@ const Navbar = () => {
         {toggleMenu && (
           <div className="gp__navbar-menu_container scale-up-center">
             <div className="gp__navbar-menu_container-links">
-              <p>
-                <a href="#home">Home</a>
-              </p>
-              <p>
-                <a href="#what">What is GPT3?</a>
-              </p>
-              <p>
-                <a href="#Labs">Labs</a>
-              </p>
+              <Link to="/">
+                <p>Home</p>
+              </Link>
+
+              <Link to="/labs">
+                <p>Labs</p>
+              </Link>
             </div>
             <div className="gp__navbar-menu_container-links-sign">
-              <Link to="\login">
-                <p>Sign in</p>
+              <Link to="/login">
+                <p>Log In</p>
               </Link>
-              <Link to="\signup">
+
+              <Link to="/signup">
                 <button type="button">Sign up</button>
               </Link>
             </div>

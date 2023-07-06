@@ -1,44 +1,55 @@
-import React from "react";
+import { useContext } from "react";
 import "./lab.css";
 import learn from "../../assets/learn.png";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../App";
+
 const Labs = ({ img, title }) => {
   const navigate = useNavigate();
+  const user = useContext (UserContext);
   
-  const navigateToContent = () => {
-    const currentTime = new Date().toLocaleTimeString();
-    localStorage.setItem("labtime",currentTime);
-    navigate("/content"); 
 
+
+
+  const navigateToContent = (title) => {
+    if (!user) {
+      navigate("/login");
+    } else {
+      const currentTime = new Date().toLocaleTimeString();
+      localStorage.setItem("labtime", currentTime);
+      navigate(`/content/${title.title}`);
+    }
   };
   const navigateTolearningContent = () => {
-    navigate("/learningcontent"); 
+    navigate("/learningcontent");
   };
- if(img === learn){
-  return (
-    <div className="labCard">
-      <img src={img} className="labCard__img" alt=""/>
-      <div className="labCard__body">
-        <h3 className="labCard__title">{title}</h3>
-        <button className="labCard__btn" onClick={navigateTolearningContent}>
-        Let's Begin
-        </button>
+  if (img === learn) {
+    return (
+      <div className="labCard">
+        <img src={img} className="labCard__img" alt="" />
+        <div className="labCard__body">
+          <h3 className="labCard__title">{title}</h3>
+          <button className="labCard__btn" onClick={navigateTolearningContent}>
+            Let's Begin
+          </button>
+        </div>
       </div>
-    </div>
-  );
-} else{
-  return(
-  <div className="labCard">
-  <img src={img} className="labCard__img" alt=""/>
-  <div className="labCard__body">
-    <h3 className="labCard__title">{title}</h3>
-    <button className="labCard__btn" onClick={navigateToContent}>
-    Access Lab
-    </button>
-  </div>
-</div>
-);
-
+    );
+  } else {
+    return (
+      <div className="labCard">
+        <img src={img} className="labCard__img" alt="" />
+        <div className="labCard__body">
+          <h3 className="labCard__title">{title}</h3>
+          <button
+            className="labCard__btn"
+            onClick={() => navigateToContent({ title })}
+          >
+            Access Lab
+          </button>
+        </div>
+      </div>
+    );
   }
 };
 export default Labs;

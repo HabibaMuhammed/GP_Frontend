@@ -1,12 +1,22 @@
-import React from 'react'
-import UserProfileSideBar from '../containers/UserProfileSideBar/UserProfileSideBar'
-import SettingsContent from '../containers/SettingsContent/SettingsContent'
+import React, { useContext } from "react";
+import UserProfileSideBar from "../containers/UserProfileSideBar/UserProfileSideBar";
+import SettingsContent from "../containers/SettingsContent/SettingsContent";
+import Error404 from "../components/error/Error"
+import { UserContext } from "../App";
+
 
 export default function Settings() {
+  const user = useContext(UserContext);
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
-        <UserProfileSideBar name="hagora"/>
-        <SettingsContent/>
-    </div>
-  )
+    <>
+      {user && (
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <UserProfileSideBar user={user} />
+          <SettingsContent />
+        </div>
+      )}
+      {!user && <Error404/>}
+
+    </>
+  );
 }
